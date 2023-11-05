@@ -14,8 +14,8 @@ function BlackBoard() {
     </div>`,
     font: 1,
     stickers: [
-      { num: 1, positionX: 2, positionY: 3, img: 1 },
-      { num: 2, positionX: 5, positionY: 6, img: 2 }
+      { num: 1, positionX: 0, positionY: 0, img: 1 },
+      { num: 2, positionX: 4, positionY: 6, img: 2 }
     ]
   };
   const loadContent = () => {

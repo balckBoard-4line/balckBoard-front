@@ -15,14 +15,14 @@ export const BlackBoardEditorWrapper = styled.div`
   font-size: ${props => props.$emsize};
   width: 100%;
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
 
+  overflow-y: scroll;
   background-color: ${props => props.theme.colors.grey1};
+  padding-bottom: 40px;
 `;
 
 export const BlackBoardEditorRage = styled.input`
@@ -30,11 +30,18 @@ export const BlackBoardEditorRage = styled.input`
   bottom: 10px;
 `;
 
+export const BlackBoardEditorSticker = styled.div`
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+`;
 export const BlackBoardWrapper = styled.div`
   width: 100%;
+  height: auto;
   padding: 6em 3.75em;
   position: relative;
   overflow-x: hidden;
+  overflow-y: hidden;
   background-color: ${props => props.theme.colors.main1};
 `;
 
@@ -49,7 +56,7 @@ export const BlackBoardContent = styled.div`
 
 export const Sticker = styled.img`
   position: absolute;
-  transform: translate((-50%, -50%));
+
   top: ${props => props.$position_y};
   left: ${props => props.$position_x};
   width: ${props => props.$img_width};
