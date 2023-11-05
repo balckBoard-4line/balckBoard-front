@@ -22,3 +22,31 @@
   font-family: "Dongguk";
   src: url("../fonts/Dongguk.woff") format("WOFF");
 }
+
+@font-face {
+  font-family: "Maple";
+  src: url("../fonts/Maple.woff") format("WOFF");
+}
+
+/* 전주 공예 명조체 http://www.jeonjucraft.or.kr/2019/inner.php?sMenu=C1000&mode=view&no=165 */
+@font-face {
+  font-family: "Art";
+  src: url("../fonts/Art.woff") format("WOFF");
+}
+
+/* 차쌤체  https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13285736&menuNo=200023 */
+@font-face {
+  font-family: "SSam";
+  src: url("../fonts/SSam.woff") format("WOFF");
+}
+
+/* 클로버체 https://www.yspotlight.co.kr/download/font?tabNo=4 */
+@font-face {
+  font-family: "Clover";
+  src: url("../fonts/Clover.woff") format("WOFF");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard.woff") format("WOFF");
+}

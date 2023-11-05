@@ -88,7 +88,7 @@ function BlackBoardEditor() {
         </div>
      
 `,
-    font: "Dongguk"
+    font: "Art"
   };
   const loadContent = () => {
     return <div dangerouslySetInnerHTML={{ __html: data.content }}></div>;
