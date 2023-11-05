@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BlackBoardListWrapper = styled.div`
-  font-size: ${props => props.emsize};
+  font-size: ${props => props.$emsize};
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -20,8 +20,8 @@ export const BlackBoardNickName = styled.div`
 `;
 export const BlackBoardContent = styled.div`
   font-size: 1.2em;
+  line-height: 200%;
   div {
-    height: 2.4em;
     display: flex;
     align-items: center;
   }

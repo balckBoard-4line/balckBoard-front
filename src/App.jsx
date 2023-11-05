@@ -3,6 +3,7 @@ import { GlobalStyle } from "./style/globalStyle";
 import { theme } from "./style/theme.js";
 
 import { Outlet } from "react-router-dom";
+import useInnerWidth from "./hooks/usInnerWidth/useInnerWidth.jsx";
 
 const Wrapper = styled.div`
   display: flex;
@@ -29,9 +30,10 @@ const Layout = () => {
 };
 
 function App() {
+  const emSize = (useInnerWidth() / 375) * 10;
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider emsize={emSize + "px"} theme={theme}>
         <GlobalStyle />
         <Layout />
       </ThemeProvider>

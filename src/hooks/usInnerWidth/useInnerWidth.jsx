@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
 function useInnerWidth() {
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const [innerWidth, setInnerWidth] = useState(
+    window.innerWidth > 420 ? 420 : window.innerWidth
+  );
 
   useEffect(() => {
     const resizeListener = () => {

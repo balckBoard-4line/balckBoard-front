@@ -7,7 +7,7 @@ function BlackBoardList() {
   const emSize = (useInnerWidth() / 375) * 10;
 
   return (
-    <S.BlackBoardListWrapper emsize={emSize + "px"}>
+    <S.BlackBoardListWrapper $emsize={emSize + "px"}>
       <BlackBoard />
     </S.BlackBoardListWrapper>
   );
