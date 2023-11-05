@@ -1,11 +1,13 @@
 import * as S from "./style";
 import React, { useEffect, useRef, useState } from "react";
-import "./blackBoardColor.css";
+
 import Draggable from "react-draggable";
 import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
-import Header from "../layout/header/StickepinkitorHeader";
+import Header from "../layout/header/StickerEditorHeader";
 import BlackBoardStickerModal from "./BlackBoardStickerModal";
 
+// import "./Range.css";/
+// import "./Range.css";
 function BlackBoardEditor() {
   const [showStickerModal, setShowStickerModal] = useState(false);
   const getShowStickerModal = bool => {
@@ -82,9 +84,9 @@ function BlackBoardEditor() {
         <div>진짜 마음개힘들다</div>
 
         <div>
+          왜 색깔먹이<span class="yellow">면 엔터가 안될까</span>요?
           왜 색깔먹이<span class="pink">면 엔터가 안될까</span>요?
-          왜 색깔먹이<span class="pink">면 엔터가 안될까</span>요?
-          왜 색깔먹이<span class="pink">면 엔터가 안될까</span>요?
+          왜 색깔먹이<span class="blue">면 엔터가 안될까</span>요?
         </div>
      
 `,
@@ -97,22 +99,30 @@ function BlackBoardEditor() {
   return (
     <S.BlackBoardEditorWrapper $emsize={emSize + "px"}>
       <Header getShowStickerModal={getShowStickerModal} />
-      {/* 스티커 크기조절 슬라이더*/}
-      <S.BlackBoardEditorRage
-        type="range"
-        min={0}
-        default={1}
-        max={2}
-        color="gray"
-        step={0.02}
-        value={volume}
-        onChange={event => {
-          setVolume(event.target.valueAsNumber);
-        }}
-      />
+      {/* 스티커 크기조절 슬라이더 ---- 옮기는 스티커가 있으면 보임*/}
+      {currentSticker != 0 ? (
+        <S.RangeWrapper>
+          <S.RangeTitle>스티커 크기</S.RangeTitle>
+          <S.Range
+            className="slider"
+            type="range"
+            min={0}
+            default={1}
+            max={2}
+            color="gray"
+            step={0.02}
+            value={volume}
+            onChange={event => {
+              setVolume(event.target.valueAsNumber);
+            }}
+          />
+        </S.RangeWrapper>
+      ) : (
+        <></>
+      )}
       {/* 스티커 크기조절 슬라이더*/}
 
-      <S.BlackBoardEditorSticker>
+      <S.BlackBoardEditorStickerArea>
         {/* 스티커 배치하기 */}
         {stickers.map(sticker => (
           <Draggable
@@ -137,7 +147,7 @@ function BlackBoardEditor() {
           <S.BlackBoardContent>{loadContent()}</S.BlackBoardContent>
         </S.BlackBoardWrapper>
         {/* ----전에 받아온 칠판 데이터 */}
-      </S.BlackBoardEditorSticker>
+      </S.BlackBoardEditorStickerArea>
 
       {showStickerModal ? (
         <BlackBoardStickerModal

@@ -5,6 +5,8 @@ import { theme } from "./style/theme.js";
 import { Outlet } from "react-router-dom";
 import useInnerWidth from "./hooks/usInnerWidth/useInnerWidth.jsx";
 
+import "./style/fontColor.css";
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
