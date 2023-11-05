@@ -1,6 +1,7 @@
 import * as S from "./style";
 import React from "react";
 import "./blackBoardColor.css";
+import BlackBoardList from "./blackBoardList";
 
 function BlackBoard() {
   const data = {
@@ -14,13 +15,25 @@ function BlackBoard() {
     font: 1,
     stickers: [
       { num: 1, positionX: 2, positionY: 3, img: 1 },
-      { num: 2, positionX: 2, positionY: 3, img: 2 }
+      { num: 2, positionX: 5, positionY: 6, img: 2 }
     ]
+  };
+  const loadContent = () => {
+    return <div dangerouslySetInnerHTML={{ __html: data.content }}></div>;
   };
   return (
     <S.BlackBoardWrapper>
-      <S.BlackBoardNickName>닉네임</S.BlackBoardNickName>
-      <S.BlackBoardContent></S.BlackBoardContent>
+      <S.BlackBoardNickName>{data.nickname}</S.BlackBoardNickName>
+      <S.BlackBoardContent>{loadContent()}</S.BlackBoardContent>
+
+      {data.stickers.map(sticker => (
+        <S.Sticker
+          key={sticker.num}
+          $position_x={sticker.positionX + "em"}
+          $position_y={sticker.positionY + "em"}
+          src={`/sticker/${sticker.img}.svg`}
+        />
+      ))}
     </S.BlackBoardWrapper>
   );
 }

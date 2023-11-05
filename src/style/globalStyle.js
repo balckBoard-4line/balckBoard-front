@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: "#486455";
     color: white;
   }
   
