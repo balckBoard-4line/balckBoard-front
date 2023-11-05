@@ -1,7 +1,6 @@
 import React from "react";
 import * as S from "./style";
 import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
-import "./blackBoardColor.css";
 
 function LetterTextEditor() {
   const emSize = (useInnerWidth() / 375) * 10;
@@ -30,7 +29,7 @@ function LetterTextEditor() {
 
       <button
         style={{ fontSize: "20px", padding: "20px" }}
-        title={"red"}
+        title={"pink"}
         onClick={fontColor}
       >
         빨강

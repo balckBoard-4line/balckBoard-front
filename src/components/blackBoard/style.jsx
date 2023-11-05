@@ -28,6 +28,7 @@ export const BlackBoardEditorWrapper = styled.div`
 export const BlackBoardEditorRage = styled.input`
   position: fixed;
   bottom: 10px;
+  z-index: 2;
 `;
 
 export const BlackBoardEditorSticker = styled.div`
@@ -61,4 +62,48 @@ export const Sticker = styled.img`
   left: ${props => props.$position_x};
   width: ${props => props.$img_width};
   border: ${props => (props.$movesticker ? "1px solid black" : "0px")};
+`;
+
+// ----스티커 선택 모달
+
+export const StickerModalWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 420px;
+
+  padding: 20px 15px;
+  padding-bottom: 10px;
+
+  background-color: #262626;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+`;
+
+export const StickerModalCloseBtn = styled.img`
+  width: 36px;
+  height: 36px;
+
+  margin-bottom: 10px;
+
+  flex-shrink: 0;
+`;
+
+export const StickerListWrapper = styled.div`
+  width: 100%;
+  flex-grow: 1;
+  overflow: scroll;
+`;
+export const StickerList = styled.div`
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+`;
+
+export const StickerModalSticker = styled.img`
+  width: 100%;
 `;

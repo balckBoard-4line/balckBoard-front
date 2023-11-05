@@ -3,20 +3,29 @@ import React, { useEffect, useRef, useState } from "react";
 import "./blackBoardColor.css";
 import Draggable from "react-draggable";
 import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
+import Header from "../layout/header/StickepinkitorHeader";
+import BlackBoardStickerModal from "./BlackBoardStickerModal";
 
 function BlackBoardEditor() {
+  const [showStickerModal, setShowStickerModal] = useState(false);
+  const getShowStickerModal = bool => {
+    setShowStickerModal(bool);
+  };
+
   const emSize = (useInnerWidth() / 375) * 10;
 
+  //현재 수정중인 스티커
   const [currentSticker, setCurrentSticker] = useState(0);
   const [stickers, setStickers] = useState([]);
 
-  const addSticker = () => {
+  const getSticker = img => {
+    setShowStickerModal(false);
     setStickers(
       stickers.concat({
         num: stickers.length + 1,
         positionX: 0,
         positionY: 0,
-        img: 2,
+        img: img,
         width: 10
       })
     );
@@ -34,14 +43,8 @@ function BlackBoardEditor() {
     return height * (1 / emSize);
   };
 
-  // 볼륨 핸들러
+  //스티커 크기조절
   const [volume, setVolume] = useState(1);
-
-  useEffect(() => {
-    if (currentSticker != 0) {
-      stickers[currentSticker - 1].width = 10 * volume;
-    }
-  }, [volume]);
 
   useEffect(() => {
     if (currentSticker != 0) {
@@ -49,6 +52,13 @@ function BlackBoardEditor() {
     }
   }, [currentSticker]);
 
+  useEffect(() => {
+    if (currentSticker != 0) {
+      stickers[currentSticker - 1].width = 10 * volume;
+    }
+  }, [volume]);
+
+  //스티커 이동
   const [position, setPosition] = useState({ x: 0, y: 0 }); // box의 포지션 값
 
   const trackPos = data => {
@@ -66,16 +76,18 @@ function BlackBoardEditor() {
   const data = {
     id: 1,
     nickname: "서현",
-    content: `   이건 텍스트 에디터....<div>안녕안녕</div>
-        <div>왜이런 비극이 자꾸...일어나지</div>
+    content: `   이건 텍스트 에디터....
+        <div>왜구현이 안되지...</div>
         
-        <div>왜이런 비극이 자꾸...일어나지</div>
+        <div>진짜 마음개힘들다</div>
 
         <div>
-          왜 색깔먹이<span class="red">면 엔터가 안될까</span>요?
-          왜 색깔먹이<span class="red">면 엔터가 안될까</span>요?
-          왜 색깔먹이<span class="red">면 엔터가 안될까</span>요?왜 색깔먹이<span class="red">면 엔터가 안될까</span>요?왜 색깔먹이<span class="red">면 엔터가 안될까</span>요?왜 색깔먹이<span class="red">면 엔터가 안될까</span>요?왜 색깔먹이<span class="red">면 엔터가 안될까</span>요?
-        </div>`,
+          왜 색깔먹이<span class="pink">면 엔터가 안될까</span>요?
+          왜 색깔먹이<span class="pink">면 엔터가 안될까</span>요?
+          왜 색깔먹이<span class="pink">면 엔터가 안될까</span>요?
+        </div>
+     
+`,
     font: 1
   };
   const loadContent = () => {
@@ -84,7 +96,7 @@ function BlackBoardEditor() {
 
   return (
     <S.BlackBoardEditorWrapper $emsize={emSize + "px"}>
-      <button onClick={addSticker}> 스티커 추가하기 </button>
+      <Header getShowStickerModal={getShowStickerModal} />
       {/* 스티커 크기조절 슬라이더*/}
       <S.BlackBoardEditorRage
         type="range"
@@ -119,13 +131,22 @@ function BlackBoardEditor() {
         ))}
         {/* 스티커 배치하기 */}
 
-        {/* 전에 받아온 칠판 데이터 */}
+        {/* ----전에 받아온 칠판 데이터 */}
         <S.BlackBoardWrapper>
           <S.BlackBoardNickName>{data.nickname}</S.BlackBoardNickName>
           <S.BlackBoardContent>{loadContent()}</S.BlackBoardContent>
         </S.BlackBoardWrapper>
-        {/* 전에 받아온 칠판 데이터 */}
+        {/* ----전에 받아온 칠판 데이터 */}
       </S.BlackBoardEditorSticker>
+
+      {showStickerModal ? (
+        <BlackBoardStickerModal
+          getShowStickerModal={getShowStickerModal}
+          getSticker={getSticker}
+        />
+      ) : (
+        <></>
+      )}
     </S.BlackBoardEditorWrapper>
   );
 }
