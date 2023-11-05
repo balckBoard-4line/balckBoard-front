@@ -12,7 +12,6 @@ const Wrapper = styled.div`
   z-index: 1;
 
   max-width: 420px;
-  min-width: 300px;
   width: 100vw;
 
   min-height: 100vh;
