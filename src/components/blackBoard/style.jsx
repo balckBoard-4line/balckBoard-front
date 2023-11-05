@@ -38,6 +38,7 @@ export const BlackBoardWrapper = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   background-color: ${props => props.theme.colors.main1};
+  font-family: ${props => props.$font};
 `;
 
 export const BlackBoardNickName = styled.div`

@@ -1,0 +1,24 @@
+.pink {
+  color: #ff9595;
+}
+
+.yellow {
+  color: #fcf083;
+}
+
+.blue {
+  color: #88d0f9;
+}
+.white {
+  color: white;
+}
+
+@font-face {
+  font-family: "Alien";
+  src: url("../fonts/Alien.woff") format("WOFF");
+}
+
+@font-face {
+  font-family: "Dongguk";
+  src: url("../fonts/Dongguk.woff") format("WOFF");
+}

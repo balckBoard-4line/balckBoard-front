@@ -6,8 +6,6 @@ import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Header from "../layout/header/StickerEditorHeader";
 import BlackBoardStickerModal from "./BlackBoardStickerModal";
 
-// import "./Range.css";/
-// import "./Range.css";
 function BlackBoardEditor() {
   const [showStickerModal, setShowStickerModal] = useState(false);
   const getShowStickerModal = bool => {
@@ -90,7 +88,7 @@ function BlackBoardEditor() {
         </div>
      
 `,
-    font: 1
+    font: "Dongguk"
   };
   const loadContent = () => {
     return <div dangerouslySetInnerHTML={{ __html: data.content }}></div>;
@@ -142,7 +140,7 @@ function BlackBoardEditor() {
         {/* 스티커 배치하기 */}
 
         {/* ----전에 받아온 칠판 데이터 */}
-        <S.BlackBoardWrapper>
+        <S.BlackBoardWrapper $font={data.font}>
           <S.BlackBoardNickName>{data.nickname}</S.BlackBoardNickName>
           <S.BlackBoardContent>{loadContent()}</S.BlackBoardContent>
         </S.BlackBoardWrapper>
