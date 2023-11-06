@@ -4,6 +4,8 @@ import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Input from "../common/input/Input";
 
 function LetterTextEditor() {
+  const emSize = (useInnerWidth() / 375) * 10;
+
   const [currentFont, setCurrentFont] = useState("Alien");
   const [currentColor, setCurrentColor] = useState("white");
 
@@ -22,7 +24,6 @@ function LetterTextEditor() {
     { name: "Ssam", korName: "차쌤체" }
   ];
 
-  const emSize = (useInnerWidth() / 375) * 10;
   const fontColor = e => {
     //선택 영역 찾기
     var selected = window.getSelection().getRangeAt(0);
