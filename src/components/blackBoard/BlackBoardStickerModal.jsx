@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "./style";
 
 function BlackBoardStickerModal({ getShowStickerModal, getSticker }) {
-  const StickerCount = 3;
+  const StickerCount = 6;
   const clickHandeler = () => {
     getShowStickerModal(false);
   };
