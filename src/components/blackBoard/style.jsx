@@ -23,6 +23,7 @@ export const BlackBoardEditorWrapper = styled.div`
 `;
 
 export const BlackBoardEditorContent = styled.div`
+  width: 100%;
   flex-grow: 1;
   overflow-y: scroll;
 `;
@@ -43,12 +44,29 @@ export const BlackBoardWrapper = styled.div`
 `;
 
 export const BlackBoardNickName = styled.div`
+  width: 100%;
   font-size: 1.4em;
   margin-bottom: 1.2em;
+
+  text-align: ${props => props.$align};
 `;
 export const BlackBoardContent = styled.div`
+  width: 100%;
   font-size: 1.2em;
   line-height: 200%;
+  text-align: ${props => props.$align};
+`;
+export const BlackBoardTitle = styled.div`
+  width: 100%;
+  font-size: 2.6em;
+  margin-bottom: 1em;
+  text-align: center;
+`;
+
+export const BlackBoardIntroduction = styled.div`
+  width: 100%;
+  font-size: 1.4em;
+  text-align: center;
 `;
 
 export const Sticker = styled.img`

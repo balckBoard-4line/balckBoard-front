@@ -5,8 +5,9 @@ import Draggable from "react-draggable";
 import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Header from "../layout/header/StickerEditorHeader";
 import BlackBoardStickerModal from "./BlackBoardStickerModal";
+import BlackBoard from "./BlackBoard";
 
-function BlackBoardEditor() {
+function BlackBoardEditor({ type, data }) {
   const [showStickerModal, setShowStickerModal] = useState(false);
   const getShowStickerModal = bool => {
     setShowStickerModal(bool);
@@ -73,26 +74,6 @@ function BlackBoardEditor() {
     }
   }, [position]);
 
-  const data = {
-    id: 1,
-    nickname: "서현",
-    content: `   이건 텍스트 에디터....
-        <div>왜구현이 안되지...</div>
-        
-        <div>진짜 마음개힘들다</div>
-        <div>
-          왜 색깔먹이<span class="yellow">면 엔터가 안될까</span>요?
-          왜 색깔먹이<span class="pink">면 엔터가 안될까</span>요?
-          왜 색깔먹이<span class="blue">면 엔터가 안될까</span>요?
-        </div>
-     
-`,
-    font: "Art"
-  };
-  const loadContent = () => {
-    return <div dangerouslySetInnerHTML={{ __html: data.content }}></div>;
-  };
-
   return (
     <S.BlackBoardEditorWrapper $emsize={emSize + "px"}>
       <Header getShowStickerModal={getShowStickerModal} />
@@ -118,10 +99,7 @@ function BlackBoardEditor() {
           {/* 스티커 배치하기 */}
 
           {/* ----전에 받아온 칠판 데이터 */}
-          <S.BlackBoardWrapper $font={data.font}>
-            <S.BlackBoardNickName>{data.nickname}</S.BlackBoardNickName>
-            <S.BlackBoardContent>{loadContent()}</S.BlackBoardContent>
-          </S.BlackBoardWrapper>
+          <BlackBoard type={type} data={data} />
           {/* ----전에 받아온 칠판 데이터 */}
         </S.BlackBoardEditorStickerArea>
       </S.BlackBoardEditorContent>
