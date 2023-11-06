@@ -60,6 +60,13 @@ export const MainBoardnum3createboard = styled.div`
   height: 100%;
   color: #345342;
   font-size: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+
+  &:hover {
+    background-color: white;
+    color: #345342;
+    transform: scale(1.05);
+  }
 `;
 export const MainBoardnum3tu = styled.div`
   font-size: 11px;

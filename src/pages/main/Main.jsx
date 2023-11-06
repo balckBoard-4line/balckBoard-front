@@ -1,15 +1,53 @@
 import BlackBoardList from "../../components/blackBoard/blackBoardList";
 import * as S from "./style";
-
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 
-import React from "react";
+const floatingAnimation = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
+const FloatingText = styled.div`
+  font-size: 15px;
+  font-weight: 600;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  animation: ${floatingAnimation} 2s linear infinite;
+`;
 
 function Main() {
+  const initialText = "지금까지 개의 칠판이 만들어졌어요!";
+  const [displayedText, setDisplayedText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+
+  useEffect(() => {
+    const textInterval = setInterval(() => {
+      if (textIndex < initialText.length) {
+        setDisplayedText(initialText.slice(0, textIndex + 1));
+        setTextIndex(textIndex + 1);
+      } else {
+        clearInterval(textInterval);
+      }
+    }, 70); // 글자가 나타나는 간격(ms)
+    return () => {
+      clearInterval(textInterval);
+    };
+  }, [textIndex]);
+
   return (
     <S.MainWrapper>
-      <S.MainBoardnum>지금까지 개의 칠판이 만들어졌어요! </S.MainBoardnum>
-
+      <FloatingText>{displayedText}</FloatingText>
       <S.MainBoardnum2>
         <S.MainBoardnum2logo>
           <Link to={`blackBoard/${1}`}>칠판 바로가기</Link>
