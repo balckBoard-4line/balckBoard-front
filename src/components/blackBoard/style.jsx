@@ -66,6 +66,7 @@ export const RangeWrapper = styled.div`
   z-index: 2;
 
   width: 100%;
+  max-width: 420px;
   padding: 20px 15px;
 
   display: flex;
