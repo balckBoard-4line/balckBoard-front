@@ -51,7 +51,7 @@ export const colorList = styled.div`
   display: flex;
 `;
 
-export const colorBtn = styled.div`
+export const colorBtn = styled.button`
   width: 24px;
   height: 24px;
   border-radius: 50%;

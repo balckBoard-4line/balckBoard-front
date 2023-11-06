@@ -6,7 +6,7 @@ import BlackBoardList from "../../components/blackBoard/blackBoardList";
 function BlackBoardView() {
   return (
     <>
-      {/* 공개후 */}
+      칠판 보기
       <BlackBoardList />
     </>
   );
