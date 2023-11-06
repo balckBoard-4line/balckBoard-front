@@ -10,7 +10,15 @@ function Main() {
     <S.MainWrapper>
       <S.MainTitle>메인페이지</S.MainTitle>
       <Link to={`blackBoard/${1}`}>칠판 바로가기</Link>
+      <br />
+      <Link to={`titleCreate/${1}`}>칠판 만들기</Link>
+      <br />
+      <Link to={`titleEditor/${1}`}>칠판 꾸미기 바로가기</Link>
+      <br />
       <Link to={`letterCreate/${1}`}>편지 쓰기 바로가기</Link>
+      <br />
+      <Link to={`letterEditor/${1}`}>편지 꾸미기 바로가기</Link>
+      <br />
     </S.MainWrapper>
   );
 }

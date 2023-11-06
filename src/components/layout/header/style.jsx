@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-  position: fixed;
   top: 0;
   width: 100%;
   max-width: 420px;
@@ -9,8 +8,8 @@ export const HeaderWrapper = styled.div`
   padding-bottom: 15px;
 
   padding: 0px 15px;
-  margin-bottom: 40px;
-  background-color: ${props => props.theme.colors.grey1};
+  margin-bottom: 20px;
+
   z-index: 2;
 `;
 

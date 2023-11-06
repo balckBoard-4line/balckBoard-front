@@ -5,7 +5,7 @@ import { theme } from "./style/theme.js";
 import { Outlet } from "react-router-dom";
 import useInnerWidth from "./hooks/usInnerWidth/useInnerWidth.jsx";
 
-import "./style/fontColor.css";
+import "./style/font.css";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,6 +19,8 @@ const Wrapper = styled.div`
 
   min-height: 100vh;
   background-color: ${porps => porps.theme.colors.main1};
+
+  font-family: "Alien";
 `;
 
 const Layout = () => {

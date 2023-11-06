@@ -14,17 +14,19 @@ export const BlackBoardListWrapper = styled.div`
 export const BlackBoardEditorWrapper = styled.div`
   font-size: ${props => props.$emsize};
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  overflow-y: scroll;
-  background-color: ${props => props.theme.colors.grey1};
-  padding-bottom: 40px;
+  justify-content: space-between;
 `;
 
+export const BlackBoardEditorContent = styled.div`
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: scroll;
+`;
 export const BlackBoardEditorStickerArea = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
@@ -38,15 +40,33 @@ export const BlackBoardWrapper = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   background-color: ${props => props.theme.colors.main1};
+  font-family: ${props => props.$font};
 `;
 
 export const BlackBoardNickName = styled.div`
+  width: 100%;
   font-size: 1.4em;
   margin-bottom: 1.2em;
+
+  text-align: ${props => props.$align};
 `;
 export const BlackBoardContent = styled.div`
+  width: 100%;
   font-size: 1.2em;
   line-height: 200%;
+  text-align: ${props => props.$align};
+`;
+export const BlackBoardTitle = styled.div`
+  width: 100%;
+  font-size: 2.6em;
+  margin-bottom: 1em;
+  text-align: center;
+`;
+
+export const BlackBoardIntroduction = styled.div`
+  width: 100%;
+  font-size: 1.4em;
+  text-align: center;
 `;
 
 export const Sticker = styled.img`
@@ -60,17 +80,15 @@ export const Sticker = styled.img`
 
 //----크기 슬라이더
 export const RangeWrapper = styled.div`
-  position: fixed;
-  bottom: 0px;
   z-index: 2;
 
   width: 100%;
-  padding: 20px 15px;
+  max-width: 420px;
+  padding: 15px 15px;
+  padding-bottom: 20px;
 
   display: flex;
   align-items: center;
-
-  background-color: ${props => props.theme.colors.grey1};
 
   input::-webkit-slider-thumb {
     -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
