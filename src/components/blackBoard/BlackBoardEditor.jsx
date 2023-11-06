@@ -80,7 +80,6 @@ function BlackBoardEditor() {
         <div>왜구현이 안되지...</div>
         
         <div>진짜 마음개힘들다</div>
-
         <div>
           왜 색깔먹이<span class="yellow">면 엔터가 안될까</span>요?
           왜 색깔먹이<span class="pink">면 엔터가 안될까</span>요?
@@ -97,6 +96,36 @@ function BlackBoardEditor() {
   return (
     <S.BlackBoardEditorWrapper $emsize={emSize + "px"}>
       <Header getShowStickerModal={getShowStickerModal} />
+
+      <S.BlackBoardEditorContent>
+        <S.BlackBoardEditorStickerArea>
+          {/* 스티커 배치하기 */}
+          {stickers.map(sticker => (
+            <Draggable
+              key={sticker.num}
+              //   bounds={".draggableBounds"}
+              onDrag={(e, data) => trackPos(data)}
+            >
+              <S.Sticker
+                title={sticker.num}
+                $img_width={sticker.width + "em"}
+                src={`/sticker/${sticker.img}.svg`}
+                $movesticker={currentSticker == sticker.num}
+                style={{ zIndex: `${sticker.num}` }}
+              />
+            </Draggable>
+          ))}
+          {/* 스티커 배치하기 */}
+
+          {/* ----전에 받아온 칠판 데이터 */}
+          <S.BlackBoardWrapper $font={data.font}>
+            <S.BlackBoardNickName>{data.nickname}</S.BlackBoardNickName>
+            <S.BlackBoardContent>{loadContent()}</S.BlackBoardContent>
+          </S.BlackBoardWrapper>
+          {/* ----전에 받아온 칠판 데이터 */}
+        </S.BlackBoardEditorStickerArea>
+      </S.BlackBoardEditorContent>
+
       {/* 스티커 크기조절 슬라이더 ---- 옮기는 스티커가 있으면 보임*/}
       {currentSticker != 0 ? (
         <S.RangeWrapper>
@@ -119,33 +148,6 @@ function BlackBoardEditor() {
         <></>
       )}
       {/* 스티커 크기조절 슬라이더*/}
-
-      <S.BlackBoardEditorStickerArea>
-        {/* 스티커 배치하기 */}
-        {stickers.map(sticker => (
-          <Draggable
-            key={sticker.num}
-            //   bounds={".draggableBounds"}
-            onDrag={(e, data) => trackPos(data)}
-          >
-            <S.Sticker
-              title={sticker.num}
-              $img_width={sticker.width + "em"}
-              src={`/sticker/${sticker.img}.svg`}
-              $movesticker={currentSticker == sticker.num}
-              style={{ zIndex: `${sticker.num}` }}
-            />
-          </Draggable>
-        ))}
-        {/* 스티커 배치하기 */}
-
-        {/* ----전에 받아온 칠판 데이터 */}
-        <S.BlackBoardWrapper $font={data.font}>
-          <S.BlackBoardNickName>{data.nickname}</S.BlackBoardNickName>
-          <S.BlackBoardContent>{loadContent()}</S.BlackBoardContent>
-        </S.BlackBoardWrapper>
-        {/* ----전에 받아온 칠판 데이터 */}
-      </S.BlackBoardEditorStickerArea>
 
       {showStickerModal ? (
         <BlackBoardStickerModal

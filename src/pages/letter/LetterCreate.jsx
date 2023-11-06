@@ -7,7 +7,7 @@ import Button from "../../components/common/button/Button";
 
 function LetterCreatePage() {
   return (
-    <S.PageWrapper>
+    <S.PageWrapper style={{ backgroundColor: "#345342" }}>
       <InputHeader content={"메세지를 남겨주세요"} />
       <S.PageContent>
         <LetterTextEditor />

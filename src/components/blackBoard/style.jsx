@@ -14,17 +14,18 @@ export const BlackBoardListWrapper = styled.div`
 export const BlackBoardEditorWrapper = styled.div`
   font-size: ${props => props.$emsize};
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  overflow-y: scroll;
-  background-color: ${props => props.theme.colors.grey1};
-  padding-bottom: 40px;
+  justify-content: space-between;
 `;
 
+export const BlackBoardEditorContent = styled.div`
+  flex-grow: 1;
+  overflow-y: scroll;
+`;
 export const BlackBoardEditorStickerArea = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
@@ -61,18 +62,15 @@ export const Sticker = styled.img`
 
 //----크기 슬라이더
 export const RangeWrapper = styled.div`
-  position: fixed;
-  bottom: 0px;
   z-index: 2;
 
   width: 100%;
   max-width: 420px;
-  padding: 20px 15px;
+  padding: 15px 15px;
+  padding-bottom: 20px;
 
   display: flex;
   align-items: center;
-
-  background-color: ${props => props.theme.colors.grey1};
 
   input::-webkit-slider-thumb {
     -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
