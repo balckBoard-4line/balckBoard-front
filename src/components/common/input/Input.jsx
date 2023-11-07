@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as S from "./style";
 
-function Input({ maxcount, font }) {
+function Input({ maxcount, font, placeholder, showInputCount = true }) {
   const [inputCount, setInputCount] = useState(0);
   const inputHandeler = e => {
     setInputCount(e.target.value.length);
@@ -12,7 +12,7 @@ function Input({ maxcount, font }) {
         $font={font}
         onChange={inputHandeler}
         maxLength={maxcount - 1}
-        placeholder="닉네임을 남겨주세요!"
+        placeholder={placeholder}
       />
       <S.InputCount>
         {inputCount} / {maxcount}
