@@ -13,7 +13,7 @@ function TitleCreate() {
   //   setInputText(event.target.value);
   // };
   const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState('12:00');
+  const [selectedTime, setSelectedTime] = useState("12:00");
 
   const handleDateChange = date => {
     setSelectedDate(date);
@@ -22,7 +22,6 @@ function TitleCreate() {
   const handleTimeChange = time => {
     setSelectedTime(time);
   };
-
 
   return (
     <S.PageWrapper style={{ backgroundColor: "#345342" }}>

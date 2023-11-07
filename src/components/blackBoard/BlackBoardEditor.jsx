@@ -133,43 +133,49 @@ function BlackBoardEditor({ type, data }) {
         </S.BlackBoardEditorStickerArea>
       </S.BlackBoardEditorContent>
 
-      {/* 스티커 크기조절 슬라이더 ---- 옮기는 스티커가 있으면 보임*/}
+      {/* 스티커 조절 슬라이더 ---- 옮기는 스티커가 있으면 보임*/}
       {currentSticker != 0 ? (
-        <>
-          <div onClick={mirrorHandeler}>스티커 좌우 반전</div>
-          <S.RangeWrapper>
-            <S.RangeTitle>스티커 크기</S.RangeTitle>
-            <S.Range
-              className="slider"
-              type="range"
-              min={0}
-              default={1}
-              max={2}
-              color="gray"
-              step={0.02}
-              value={size}
-              onChange={event => {
-                setSize(event.target.valueAsNumber);
-              }}
-            />
-          </S.RangeWrapper>
-          <S.RangeWrapper>
-            <S.RangeTitle>스티커 크기</S.RangeTitle>
-            <S.Range
-              className="slider"
-              type="range"
-              min={-180}
-              default={0}
-              max={180}
-              color="gray"
-              step={0.02}
-              value={angle}
-              onChange={event => {
-                setAngle(event.target.valueAsNumber);
-              }}
-            />
-          </S.RangeWrapper>
-        </>
+        <S.RangeListWrapper>
+          <S.RangeList>
+            {/* 크기 조절 */}
+            <S.RangeWrapper>
+              <S.RangeTitle>크기</S.RangeTitle>
+              <S.Range
+                className="slider"
+                type="range"
+                min={0}
+                default={1}
+                max={2}
+                color="gray"
+                step={0.02}
+                value={size}
+                onChange={event => {
+                  setSize(event.target.valueAsNumber);
+                }}
+              />
+            </S.RangeWrapper>
+            {/* 각도조절 */}
+            <S.RangeWrapper>
+              <S.RangeTitle>각도</S.RangeTitle>
+              <S.Range
+                className="slider"
+                type="range"
+                min={-180}
+                default={0}
+                max={180}
+                color="gray"
+                step={0.02}
+                value={angle}
+                onChange={event => {
+                  setAngle(event.target.valueAsNumber);
+                }}
+              />
+            </S.RangeWrapper>
+          </S.RangeList>
+
+          {/* 좌우반전 */}
+          <S.MirrorBtn src={"/Icon_Flip.svg"} onClick={mirrorHandeler} />
+        </S.RangeListWrapper>
       ) : (
         <></>
       )}

@@ -82,13 +82,35 @@ export const Sticker = styled.img`
 `;
 
 //----크기 슬라이더
-export const RangeWrapper = styled.div`
+export const RangeListWrapper = styled.div`
   z-index: 2;
-
+  display: flex;
   width: 100%;
   max-width: 420px;
-  padding: 15px 15px;
-  padding-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+`;
+
+export const MirrorBtn = styled.img`
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+`;
+export const RangeList = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-grow: 1;
+  height: 100%;
+`;
+
+export const RangeWrapper = styled.div`
+  width: 100%;
+  max-width: 420px;
+  padding: 0 15px;
 
   display: flex;
   align-items: center;
@@ -116,6 +138,7 @@ export const RangeTitle = styled.div`
   font-size: 14px;
   flex-shrink: 0;
   margin-right: 10px;
+  width: 28px;
 `;
 export const Range = styled.input`
   -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
