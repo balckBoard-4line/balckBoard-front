@@ -17,7 +17,7 @@ function Visitors() {
           </S.Visitorsbox>
         </S.Visitors1>
         <S.Visitors2>
-          <Link to="/bflaunch/1" style={{ width: "80%" }}>
+          <Link to="/userBlackBoard/1" style={{ width: "80%" }}>
             <S.VisitorsReturn>돌아가기</S.VisitorsReturn>
           </Link>
         </S.Visitors2>

@@ -10,7 +10,7 @@ function UserBlackBoard() {
     url: "dkdjfkewoo1we3", // 링크 이미지에서 사용
     title: "제목입니다.",
     introduction: "칠판 소개입니다.",
-    graduateDate: "2022-11-07 23:54:00",
+    graduateDate: "2023-11-08 01:07:00",
     letters: [
       {
         blackboardId: "1rkfj3irji33",

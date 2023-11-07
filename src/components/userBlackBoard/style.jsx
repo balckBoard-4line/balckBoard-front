@@ -79,7 +79,7 @@ export const Bfnum3 = styled.div`
   align-items: center;
   width: 100%;
   height: 25vh;
-  gap: 10px;
+  gap: 15px;
 `;
 export const Bfnum3in1 = styled.div`
   display: flex;
@@ -97,7 +97,7 @@ export const Bfnum3in1wrp = styled.div`
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 30%;
+  height: 32%;
   background-color: white;
   border-radius: 10px;
   font-size: 20px;
@@ -117,7 +117,7 @@ export const Bfnum3in2wrp = styled.div`
   align-items: center;
   border: 3px solid white;
   width: 80%;
-  height: 30%;
+  height: 32%;
   border-radius: 10px;
   font-size: 20px;
 `;
@@ -137,9 +137,9 @@ export const Bfnum3in3wrp = styled.div`
   flex-direction: row;
   gap: 10px;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   width: 100%;
-  height: 40%;
+  height: 36%;
   font-size: 14px;
   color: #aebab3;
 `;
@@ -149,4 +149,11 @@ export const Bfnum4inbrown = styled.div`
   width: 100%;
   height: 3vh;
   background-color: #715948;
+`;
+export const Loading = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
