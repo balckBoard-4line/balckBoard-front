@@ -14,9 +14,11 @@ function Input({ maxcount, font, placeholder, showInputCount = true }) {
         maxLength={maxcount - 1}
         placeholder={placeholder}
       />
-      <S.InputCount>
-        {inputCount} / {maxcount}
-      </S.InputCount>
+      {showInputCount && (
+        <S.InputCount>
+          {inputCount} / {maxcount}
+        </S.InputCount>
+      )}
     </S.InputWrapper>
   );
 }
