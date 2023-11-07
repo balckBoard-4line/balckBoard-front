@@ -75,7 +75,10 @@ export const Sticker = styled.img`
   top: ${props => props.$position_y};
   left: ${props => props.$position_x};
   width: ${props => props.$img_width};
-  border: ${props => (props.$movesticker ? "1px solid black" : "0px")};
+  border: ${props => (props.$movesticker ? "3px solid black" : "0px")};
+
+  transform: rotate(${props => props.$img_angle})
+    scaleX(${props => props.$img_mirror}) !important;
 `;
 
 //----크기 슬라이더

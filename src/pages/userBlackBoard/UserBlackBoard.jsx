@@ -47,14 +47,18 @@ function UserBlackBoard() {
             positionX: 3,
             positionY: 5,
             img: 10,
-            width: 10
+            width: 10,
+            angle: 30,
+            mirror: 1
           },
           {
             num: 2,
             positionX: 23,
             positionY: 6,
             img: 5,
-            width: 12
+            width: 12,
+            angle: -70,
+            mirror: -1
           }
         ]
       }
@@ -65,14 +69,18 @@ function UserBlackBoard() {
         positionX: 0,
         positionY: 0,
         img: 2,
-        width: 10
+        width: 10,
+        angle: -70,
+        mirror: -1
       },
       {
         num: 2,
         positionX: 13,
         positionY: 5,
         img: 4,
-        width: 10
+        width: 10,
+        angle: -70,
+        mirror: -1
       }
     ]
   };

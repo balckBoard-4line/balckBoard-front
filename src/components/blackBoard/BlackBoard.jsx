@@ -29,11 +29,14 @@ function BlackBoard({ type, data }) {
 
       {data.stickers?.map(sticker => (
         <S.Sticker
-          key={sticker.num}
+          title={sticker.num}
+          src={`/sticker/${sticker.img}.svg`}
           $position_x={sticker.positionX + "em"}
           $position_y={sticker.positionY + "em"}
-          src={`/sticker/${sticker.img}.svg`}
           $img_width={sticker.width + "em"}
+          $img_angle={sticker.angle + "deg"}
+          $img_mirror={sticker.mirror}
+          style={{ zIndex: `${sticker.num}` }}
         />
       ))}
     </S.BlackBoardWrapper>

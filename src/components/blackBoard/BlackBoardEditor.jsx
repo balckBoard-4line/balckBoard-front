@@ -23,11 +23,15 @@ function BlackBoardEditor({ type, data }) {
     setShowStickerModal(false);
     setStickers(
       stickers.concat({
-        num: stickers.length + 1,
+        num: stickers.length + 1, //스티커 인덱스
+        img: img, //스티커 종류
+
         positionX: 0,
         positionY: 0,
-        img: img,
-        width: 10
+
+        width: 10, //스티커 크기
+        angle: 0, //스티커 회전각
+        mirror: 1 //좌우반전
       })
     );
   };
@@ -45,19 +49,40 @@ function BlackBoardEditor({ type, data }) {
   };
 
   //스티커 크기조절
-  const [volume, setVolume] = useState(1);
+  const [size, setSize] = useState(1);
 
   useEffect(() => {
     if (currentSticker != 0) {
-      setVolume(stickers[currentSticker - 1].width / 10);
+      stickers[currentSticker - 1].width = 10 * size;
+    }
+  }, [size]);
+
+  //스티커 각도
+  const [angle, setAngle] = useState(0);
+
+  useEffect(() => {
+    if (currentSticker != 0) {
+      stickers[currentSticker - 1].angle = angle;
+    }
+  }, [angle]);
+
+  //스티커 좌우 반전
+  const [mirror, setMirror] = useState(1);
+  const mirrorHandeler = () => {
+    if (currentSticker != 0) {
+      console.log("클릭");
+      setMirror(mirror * -1);
+      stickers[currentSticker - 1].mirror = mirror;
+    }
+  };
+
+  useEffect(() => {
+    if (currentSticker != 0) {
+      setSize(stickers[currentSticker - 1].width / 10);
+      setAngle(stickers[currentSticker - 1].angle);
+      setMirror(stickers[currentSticker - 1].mirror);
     }
   }, [currentSticker]);
-
-  useEffect(() => {
-    if (currentSticker != 0) {
-      stickers[currentSticker - 1].width = 10 * volume;
-    }
-  }, [volume]);
 
   //스티커 이동
   const [position, setPosition] = useState({ x: 0, y: 0 }); // box의 포지션 값
@@ -89,8 +114,12 @@ function BlackBoardEditor({ type, data }) {
             >
               <S.Sticker
                 title={sticker.num}
-                $img_width={sticker.width + "em"}
                 src={`/sticker/${sticker.img}.svg`}
+                $position_x={sticker.positionX + "em"}
+                $position_y={sticker.positionY + "em"}
+                $img_width={sticker.width + "em"}
+                $img_angle={sticker.angle + "deg"}
+                $img_mirror={sticker.mirror}
                 $movesticker={currentSticker == sticker.num}
                 style={{ zIndex: `${sticker.num}` }}
               />
@@ -106,22 +135,41 @@ function BlackBoardEditor({ type, data }) {
 
       {/* 스티커 크기조절 슬라이더 ---- 옮기는 스티커가 있으면 보임*/}
       {currentSticker != 0 ? (
-        <S.RangeWrapper>
-          <S.RangeTitle>스티커 크기</S.RangeTitle>
-          <S.Range
-            className="slider"
-            type="range"
-            min={0}
-            default={1}
-            max={2}
-            color="gray"
-            step={0.02}
-            value={volume}
-            onChange={event => {
-              setVolume(event.target.valueAsNumber);
-            }}
-          />
-        </S.RangeWrapper>
+        <>
+          <div onClick={mirrorHandeler}>스티커 좌우 반전</div>
+          <S.RangeWrapper>
+            <S.RangeTitle>스티커 크기</S.RangeTitle>
+            <S.Range
+              className="slider"
+              type="range"
+              min={0}
+              default={1}
+              max={2}
+              color="gray"
+              step={0.02}
+              value={size}
+              onChange={event => {
+                setSize(event.target.valueAsNumber);
+              }}
+            />
+          </S.RangeWrapper>
+          <S.RangeWrapper>
+            <S.RangeTitle>스티커 크기</S.RangeTitle>
+            <S.Range
+              className="slider"
+              type="range"
+              min={-180}
+              default={0}
+              max={180}
+              color="gray"
+              step={0.02}
+              value={angle}
+              onChange={event => {
+                setAngle(event.target.valueAsNumber);
+              }}
+            />
+          </S.RangeWrapper>
+        </>
       ) : (
         <></>
       )}
