@@ -94,17 +94,19 @@ export const BlackBoardInputArea = styled.input`
   font-size: 16px;
   color: white;
   padding: 15px 20px;
+  margin: 10px 0px 0px 0px;
 
   border-radius: 10px;
   background-color: ${props => props.theme.colors.grey1};
   font-family: "Pretendard";
 
-  /* Remove the default arrow icon */
-  appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M7 10l5 5 5-5H7z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 24px;
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(100%); /* 달력 아이콘 색상을 흰색으로 설정 */
+  }
+  &::-webkit-clock {
+    filter: invert(100%); /* 시계 아이콘 색상을 흰색으로 설정 */
+  }
+
 `;
 
 export const InputCount = styled.div`
