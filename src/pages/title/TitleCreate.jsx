@@ -12,6 +12,17 @@ function TitleCreate() {
   // const handleInputChange = (event) => {
   //   setInputText(event.target.value);
   // };
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState('12:00');
+
+  const handleDateChange = date => {
+    setSelectedDate(date);
+  };
+
+  const handleTimeChange = time => {
+    setSelectedTime(time);
+  };
+
 
   return (
     <S.PageWrapper style={{ backgroundColor: "#345342" }}>
@@ -51,6 +62,7 @@ function TitleCreate() {
           <S.BlackBoardContent>졸업 날짜</S.BlackBoardContent>
           <S.BlackBoardInputWrapper>
             <S.BlackBoardInputArea type="date" />
+            <S.BlackBoardInputArea type="time" />
           </S.BlackBoardInputWrapper>
         </S.BlackBoardInput>
       </S.PageContent>
