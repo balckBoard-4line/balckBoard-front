@@ -89,7 +89,7 @@ export const RangeListWrapper = styled.div`
   max-width: 420px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  padding: 15px 0px;
 `;
 
 export const MirrorBtn = styled.img`
