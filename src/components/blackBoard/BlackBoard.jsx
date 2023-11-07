@@ -2,12 +2,11 @@ import * as S from "./style";
 import React from "react";
 
 function BlackBoard({ type, data }) {
-  console.log(data.align);
   const loadContent = () => {
     return <div dangerouslySetInnerHTML={{ __html: data.content }}></div>;
   };
   return (
-    <S.BlackBoardWrapper $font={data.font}>
+    <S.BlackBoardWrapper $font={data?.font}>
       {type == "letter" ? (
         <>
           {/* 편지일경우 */}

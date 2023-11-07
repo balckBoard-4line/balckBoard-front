@@ -1,7 +1,13 @@
 import React from "react";
 
-function AfterLaunch() {
-  return <div>AfterLaunch</div>;
+import BlackBoardList from "../blackBoard/blackBoardList";
+
+function AfterLaunch({ data }) {
+  return (
+    <>
+      <BlackBoardList data={data} />
+    </>
+  );
 }
 
 export default AfterLaunch;
