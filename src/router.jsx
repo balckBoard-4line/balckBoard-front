@@ -8,7 +8,7 @@ import LetterEditor from "./pages/letter/LetterEditor";
 import TitleEditor from "./pages/title/TitleEditor";
 import TitleCreate from "./pages/title/TitleCreate";
 import Visitors from "./pages/visitors/Visitors";
-import UserBlackBoard from "./pages/userBlackBoard/userBlackBoard";
+import UserBlackBoard from "./pages/userBlackBoard/UserBlackBoard";
 
 const router = createBrowserRouter([
   {
