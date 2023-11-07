@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const ButtonWrapper = styled.div`
   width: 100%;
   padding: 0px 15px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const ButtonArea = styled.div`
   width: 100%;
   padding: 15px 0px;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 18px;
 
   display: flex;
   justify-content: center;

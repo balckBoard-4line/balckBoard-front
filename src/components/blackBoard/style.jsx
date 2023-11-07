@@ -45,27 +45,28 @@ export const BlackBoardWrapper = styled.div`
 
 export const BlackBoardNickName = styled.div`
   width: 100%;
-  font-size: 1.4em;
+  font-size: 2em !important;
   margin-bottom: 1.2em;
 
   text-align: ${props => props.$align};
 `;
 export const BlackBoardContent = styled.div`
   width: 100%;
-  font-size: 1.2em;
+  font-size: 1.6em !important;
   line-height: 200%;
   text-align: ${props => props.$align};
 `;
+
 export const BlackBoardTitle = styled.div`
   width: 100%;
-  font-size: 2.6em;
+  font-size: 2.6em !important;
   margin-bottom: 1em;
   text-align: center;
 `;
 
 export const BlackBoardIntroduction = styled.div`
   width: 100%;
-  font-size: 1.4em;
+  font-size: 1.4em !important;
   text-align: center;
 `;
 
@@ -160,7 +161,7 @@ export const StickerModalWrapper = styled.div`
   padding-bottom: 10px;
 
   background-color: #262626;
-  z-index: 3;
+  z-index: 9999999999999999999999;
 
   display: flex;
   flex-direction: column;

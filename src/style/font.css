@@ -1,16 +1,20 @@
 .pink {
   color: #ff9595;
+  font-size: inherit;
 }
 
 .yellow {
   color: #fcf083;
+  font-size: inherit;
 }
 
 .blue {
   color: #88d0f9;
+  font-size: inherit;
 }
 .white {
   color: white;
+  font-size: inherit;
 }
 
 @font-face {

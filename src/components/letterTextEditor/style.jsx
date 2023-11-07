@@ -33,7 +33,7 @@ export const LetterTextEditorInput = styled.div`
   width: 100%;
   height: 100%;
 
-  font-size: 1.2em;
+  font-size: 1.6em;
   line-height: 200%;
   border: none;
 `;
