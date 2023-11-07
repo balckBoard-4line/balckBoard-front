@@ -1,6 +1,6 @@
 import React from "react";
 
-import BlackBoardList from "../blackBoard/blackBoardList";
+import BlackBoardList from "../blackBoard/BlackBoardList";
 
 function AfterLaunch({ data }) {
   return (
