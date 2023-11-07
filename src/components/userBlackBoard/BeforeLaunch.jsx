@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import * as S from "./style";
-import { Link } from "react-router-dom";
+import moment from "moment";
 
-function BeforeLaunch() {
+import { Link } from "react-router-dom";
+import * as S from "./style";
+
+function BeforeLaunch({ data, getIsLaunch }) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -11,10 +13,10 @@ function BeforeLaunch() {
   });
 
   useEffect(() => {
-    const deadline = new Date("2023-12-31T23:59:59").getTime();
+    const deadline = moment(data.graduateDate).valueOf();
 
     const interval = setInterval(() => {
-      const currentTime = new Date().getTime();
+      const currentTime = moment().valueOf();
       const timeDifference = deadline - currentTime;
 
       if (timeDifference <= 0) {
@@ -31,6 +33,9 @@ function BeforeLaunch() {
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
         setTimeLeft({ days, hours, minutes, seconds });
+      }
+      if (deadline < currentTime) {
+        getIsLaunch(true);
       }
     }, 1000);
 
@@ -51,7 +56,6 @@ function BeforeLaunch() {
             <S.Bfnum1time>
               <S.Bfnum1time1>칠판 공개까지</S.Bfnum1time1>
               <S.Bfnum1time2>
-                {" "}
                 {`${formatTime(timeLeft.days)} 일 ${formatTime(
                   timeLeft.hours
                 )} 시간 ${formatTime(timeLeft.minutes)} 분 ${formatTime(

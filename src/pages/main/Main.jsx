@@ -50,7 +50,7 @@ function Main() {
       <FloatingText>{displayedText}</FloatingText>
       <S.MainBoardnum2>
         <S.MainBoardnum2logo>
-          <Link to={`blackBoard/${1}`}>칠판 바로가기</Link>
+          <Link to={`userBlackBoard/${1}`}>칠판 바로가기</Link>
           <br />
           <Link to={`titleCreate/${1}`}>칠판 만들기</Link>
           <br />
@@ -59,8 +59,6 @@ function Main() {
           <Link to={`letterCreate/${1}`}>편지 쓰기 바로가기</Link>
           <br />
           <Link to={`letterEditor/${1}`}>편지 꾸미기 바로가기</Link>
-          <br />
-          <Link to={`bflaunch/${1}`}>공개전 바로가기</Link>
           <br />
           <Link to={`visitors/${1}`}>편지쓴명단 바로가기</Link>
         </S.MainBoardnum2logo>
