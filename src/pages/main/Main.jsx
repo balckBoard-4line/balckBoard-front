@@ -1,4 +1,3 @@
-import BlackBoardList from "../../components/blackBoard/blackBoardList";
 import * as S from "./style";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
