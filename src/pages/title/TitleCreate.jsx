@@ -51,6 +51,7 @@ function TitleCreate() {
         <S.BlackBoardInput>
           <S.BlackBoardContent>칠판을 받아보실 이메일</S.BlackBoardContent>
           <Input
+            maxcount={999999999}
             font="Pretendard"
             placeholder={"example@example.com"}
             showInputCount={false}
