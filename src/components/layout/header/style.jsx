@@ -17,9 +17,9 @@ export const HeaderContent = styled.div`
   width: 100%;
 
   font-size: 20px;
-  border-bottom: 2px solid white;
-  padding-top: 10px;
-  padding-bottom: 10px;
+
+  padding-top: 20px;
+  padding-bottom: 25px;
 
   z-index: 2;
 

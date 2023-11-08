@@ -39,14 +39,6 @@ export const LetterTextEditorInput = styled.div`
 `;
 
 // ----컬러피커
-export const colorListWrapper = styled.div`
-  width: 100%;
-
-  padding: 0 15px;
-
-  overflow-x: scroll;
-  flex-shrink: 0;
-`;
 export const colorList = styled.div`
   display: flex;
 `;
@@ -66,6 +58,17 @@ export const colorCheck = styled.img`
 
   width: 16px;
   height: 16px;
+`;
+
+// ----정렬피커
+export const alignList = styled.div`
+  display: flex;
+`;
+export const alignBtn = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-left: 20px;
+  opacity: ${props => (props.$nowselect ? 1 : 0.2)};
 `;
 
 // ----폰트
