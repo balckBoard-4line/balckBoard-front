@@ -17,6 +17,7 @@
     "react-datetime": "^3.2.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
+    "react-icons": "^4.11.0",
     "react-router-dom": "^6.18.0",
     "react-time-picker": "^4.0.0",
     "recoil": "^0.7.7",
