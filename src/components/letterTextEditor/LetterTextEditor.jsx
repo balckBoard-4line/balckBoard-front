@@ -64,19 +64,34 @@ function LetterTextEditor({ doSubmit }) {
   const alignBtnHandeler = e => {
     setCurrentAlign(e.target.title);
   };
+
+  //---글자 색상변경하기
   const fontColor = e => {
     //선택 영역 찾기
     var selected = window.getSelection().getRangeAt(0);
 
-    //b 태그 생성
     var node = document.createElement("span");
-    //b 태그 내부에 선택영역의 text 넣기
+
     node.className = e.target.title;
     node.innerText = selected;
 
-    //선택영역을 지우고 생성한 b태그를 넣어 바꾸기
     selected.deleteContents();
     selected.insertNode(node);
+  };
+
+  const clickTextEditor = e => {
+    var selected = window.getSelection().anchorNode.parentNode.className;
+
+    if (
+      selected == "pink" ||
+      selected == "yellow" ||
+      selected == "blue" ||
+      selected == "white"
+    ) {
+      setCurrentColor(selected);
+    } else {
+      setCurrentColor("white");
+    }
   };
 
   const TextEditorRef = useRef();
@@ -136,6 +151,7 @@ function LetterTextEditor({ doSubmit }) {
             contentEditable={true}
             suppressContentEditableWarning={true}
             ref={TextEditorRef}
+            onClick={clickTextEditor}
           />
         </S.LetterTextEditorInputWrapper>
       </S.LetterTextEditorWrapper>
