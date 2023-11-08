@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InputWrapper = styled.div`
   width: 100%;
-  padding: 10px 15px;
+  padding: 0 15px;
   display: flex;
   flex-direction: column;
   input::placeholder {
