@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as S from "./style";
 import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Input from "../common/input/Input";
@@ -10,21 +10,28 @@ function LetterTextEditor({ doSubmit }) {
 
   //---제출관련
   // submit이 진행되면, 데이터를 전송한다.
+  // useNavigate로 텍스트 값을 넘겨줘 스티커 페이지에서 꾸밀 수 있게 한다
   const navigate = useNavigate();
+
   useEffect(() => {
     if (doSubmit) {
-      console.log("제출완료");
-
       navigate("/letterEditor/1", {
         state: {
-          nickname: "_",
-          content: "으아아아아ㅏ아아아아아ㅏㅇ",
+          nickname: nickname,
+          content: TextEditorRef.current.outerHTML,
           font: currentFont,
           align: currentAlign
         }
       });
     }
   }, [doSubmit]);
+
+  //--------------제출될 데이터들...
+
+  const [nickname, setNickname] = useState("");
+  const getNickname = nickname => {
+    setNickname(nickname);
+  };
 
   const [currentFont, setCurrentFont] = useState("Alien");
   const [currentColor, setCurrentColor] = useState("white");
@@ -72,6 +79,8 @@ function LetterTextEditor({ doSubmit }) {
     selected.insertNode(node);
   };
 
+  const TextEditorRef = useRef();
+
   return (
     <>
       {/* ----닉네임 입력 */}
@@ -79,6 +88,7 @@ function LetterTextEditor({ doSubmit }) {
         placeholder={"닉네임을 남겨주세요."}
         maxcount={15}
         font={currentFont}
+        getValue={getNickname}
       />
 
       {/* ----텍스트 에디터 */}
@@ -125,6 +135,7 @@ function LetterTextEditor({ doSubmit }) {
             style={{ textAlign: `${currentAlign}` }}
             contentEditable={true}
             suppressContentEditableWarning={true}
+            ref={TextEditorRef}
           />
         </S.LetterTextEditorInputWrapper>
       </S.LetterTextEditorWrapper>

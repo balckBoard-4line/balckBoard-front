@@ -44,6 +44,8 @@ export const StyleEditorWrapper = styled.div`
   display: flex;
   width: 100%;
   padding: 0 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   justify-content: space-between;
 `;
 // ----컬러피커

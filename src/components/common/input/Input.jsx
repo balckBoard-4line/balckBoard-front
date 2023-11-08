@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import * as S from "./style";
 
-function Input({ maxcount, font, placeholder, showInputCount = true }) {
+function Input({
+  maxcount,
+  font,
+  placeholder,
+  showInputCount = true,
+  getValue
+}) {
   const [inputCount, setInputCount] = useState(0);
   const inputHandeler = e => {
     setInputCount(e.target.value.length);
+    getValue(e.target.value);
   };
   return (
     <S.InputWrapper>
