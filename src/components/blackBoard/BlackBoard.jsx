@@ -29,7 +29,7 @@ function BlackBoard({ type, data }) {
 
       {data.stickers?.map(sticker => (
         <S.Sticker
-          title={sticker.num}
+          key={data.balackboardId + "-" + sticker.num}
           src={`/sticker/${sticker.img}.svg`}
           $position_x={sticker.positionX + "em"}
           $position_y={sticker.positionY + "em"}
