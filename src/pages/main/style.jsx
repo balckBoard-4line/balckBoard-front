@@ -42,7 +42,7 @@ export const ContentGreyList = styled.div`
 
 export const ContentGreyWrapper = styled.div`
   padding: 20px 0;
-  font-family: "Pretendard-Regular";
+  font-family: "Pretendard-Regular", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,7 +79,7 @@ export const FooterWrapper = styled.div`
   padding: 40px 15px;
   display: flex;
   flex-direction: column;
-  font-family: "Pretendard-Regular";
+  font-family: "Pretendard-Regular", sans-serif;
 `;
 
 export const FooterTitle = styled.div`
