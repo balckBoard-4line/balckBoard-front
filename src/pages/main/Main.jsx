@@ -53,7 +53,7 @@ function Main() {
       <br />
       <Link to={`titleEditor`}>칠판 꾸미기 바로가기</Link>
       <br />
-      <Link to={`letterCreate/test-url}`}>편지 쓰기 바로가기</Link>
+      <Link to={`letterCreate/test-url`}>편지 쓰기 바로가기</Link>
       <br />
       <Link to={`letterEditor/test-url`}>편지 꾸미기 바로가기</Link>
       <br />
