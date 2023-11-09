@@ -19,7 +19,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
       let response;
       //-------- 타이틀일경우
       if (type == "title") {
-        response = await API.post(`api/letter?id=${params.url}`, {
+        response = await API.post(`api/blackboard`, {
           title: data.title,
           introduction: data.introduction,
           graduateDate: data.graduateDate,
