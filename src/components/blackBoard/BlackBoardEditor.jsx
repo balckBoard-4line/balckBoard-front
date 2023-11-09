@@ -13,52 +13,40 @@ import { API } from "../../api/axios";
 function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
   const params = useParams();
 
-  const handelsubmit = async postData => {
+  const handelsubmit = async () => {
     try {
-      const response = await API.post(`api/letter?id=test_url`, {
-        postData
-      });
-
-      // setData(response.config.data);
-      console.log(response);
-    } catch (error) {
-      console.log("에러~", error);
-    }
-  };
-
-  useEffect(() => {
-    if (doSubmit) {
-      let postData;
-      //------
-      //칠판의 데이터를 전달할 경우
+      //--------API쏘기
+      let response;
+      //-------- 타이틀일경우
       if (type == "title") {
-        postData ==
-          {
-            title: data.title,
-            introduction: data.introduction,
-            graduateDate: data.graduateDate,
-            stickers: stickers
-          };
+        response = await API.post(`api/letter?id=${params.url}`, {
+          title: data.title,
+          introduction: data.introduction,
+          graduateDate: data.graduateDate,
+          stickers: stickers
+        });
       }
-      //-----
-      //편지의 데이터를 전달할 경우
+      //-------- 편지일 경우
       else if (type == "letter") {
-        postData = {
+        response = await API.post(`api/letter?id=${params.url}`, {
           nickname: data.nickname,
           content: data.content,
           font: data.font,
           align: data.align,
           stickers: stickers
-        };
+        });
       }
-      handelsubmit(postData);
-      //----에이피아이로 쏘기
-      try {
-        console.log("전송완료", postData);
-      } catch {
-        getDoSubmit(false);
-      } finally {
-      }
+
+      console.log(response);
+    } catch (error) {
+      console.log("에러~", error);
+      getDoSubmit(false);
+    }
+  };
+
+  useEffect(() => {
+    if (doSubmit) {
+      handelsubmit();
     }
   }, [doSubmit]);
 

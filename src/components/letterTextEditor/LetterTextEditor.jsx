@@ -2,9 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import * as S from "./style";
 import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Input from "../common/input/Input";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function LetterTextEditor({ doSubmit }) {
+  const params = useParams();
+
   //===반응형 사이즈 측정
   const emSize = (useInnerWidth() / 375) * 10;
 
@@ -15,10 +17,13 @@ function LetterTextEditor({ doSubmit }) {
 
   useEffect(() => {
     if (doSubmit) {
-      navigate("/letterEditor/1", {
+      navigate(`/letterEditor/${params.url}`, {
         state: {
           nickname: nickname,
-          content: TextEditorRef.current.outerHTML,
+          content: TextEditorRef.current.outerHTML.replace(
+            "contenteditable=",
+            "class="
+          ),
           font: currentFont,
           align: currentAlign
         }

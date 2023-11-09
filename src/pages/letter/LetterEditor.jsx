@@ -11,6 +11,9 @@ function LetterEditor() {
   const data = { ...location.state };
 
   const [doSubmit, setDoSubmit] = useState(false);
+  const getDoSubmit = bool => {
+    setDoSubmit(bool);
+  };
 
   const handlePost = () => {
     setDoSubmit(true);
@@ -19,7 +22,12 @@ function LetterEditor() {
   return (
     <S.PageWrapper style={{ backgroundColor: "#486455" }}>
       <S.PageContent>
-        <BlackBoardEditor doSubmit={doSubmit} type={"letter"} data={data} />
+        <BlackBoardEditor
+          doSubmit={doSubmit}
+          getDoSubmit={getDoSubmit}
+          type={"letter"}
+          data={data}
+        />
       </S.PageContent>
       <Button
         content={"이렇게 할래요"}
