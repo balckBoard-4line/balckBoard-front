@@ -38,6 +38,16 @@ export const LetterTextEditorInput = styled.div`
   border: none;
 `;
 
+// ---- 상단 에디터
+
+export const StyleEditorWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+`;
 // ----컬러피커
 export const colorList = styled.div`
   display: flex;

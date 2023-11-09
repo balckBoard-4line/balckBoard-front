@@ -1,8 +1,26 @@
-import React from "react";
+import React, { Children, useEffect, useState } from "react";
 import * as S from "./style";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
+import { API } from "../../api/axios";
 
 function Visitors() {
+  const [nicknameList, setNicknameList] = useState([]);
+
+  const params = useParams();
+
+  const fetchLanternsData = async () => {
+    try {
+      const response = await API.get(`api/visitor?id=${params.url}`);
+      setNicknameList(response.data.nickname);
+    } catch (error) {
+      console.log("에러~", error);
+    }
+  };
+  useEffect(() => {
+    fetchLanternsData();
+  }, []);
+
   return (
     <div>
       <S.MainWrapper>
@@ -11,7 +29,9 @@ function Visitors() {
             <S.VisitorTitle>다녀간 사람</S.VisitorTitle>
             <S.Visitorcontent>
               <S.Visitorcontentin>
-                서현, 이름을 길 게지 은사람, 가현, 동환,호은,민서,4호선톤파이팅~
+                {nicknameList?.map((nickname, index) => (
+                  <span key={index}>{nickname}</span>
+                ))}
               </S.Visitorcontentin>
             </S.Visitorcontent>
           </S.Visitorsbox>
