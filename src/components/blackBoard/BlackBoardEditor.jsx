@@ -1,13 +1,67 @@
 import * as S from "./style";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Draggable from "react-draggable";
 import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Header from "../layout/header/StickerEditorHeader";
 import BlackBoardStickerModal from "./BlackBoardStickerModal";
 import BlackBoard from "./BlackBoard";
+import { useParams } from "react-router-dom";
 
-function BlackBoardEditor({ type, data }) {
+import { API } from "../../api/axios";
+
+function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
+  const params = useParams();
+
+  const handelsubmit = async postData => {
+    try {
+      const response = await API.post(`api/letter?id=test_url`, {
+        postData
+      });
+
+      // setData(response.config.data);
+      console.log(response);
+    } catch (error) {
+      console.log("에러~", error);
+    }
+  };
+
+  useEffect(() => {
+    if (doSubmit) {
+      let postData;
+      //------
+      //칠판의 데이터를 전달할 경우
+      if (type == "title") {
+        postData ==
+          {
+            title: data.title,
+            introduction: data.introduction,
+            graduateDate: data.graduateDate,
+            stickers: stickers
+          };
+      }
+      //-----
+      //편지의 데이터를 전달할 경우
+      else if (type == "letter") {
+        postData = {
+          nickname: data.nickname,
+          content: data.content,
+          font: data.font,
+          align: data.align,
+          stickers: stickers
+        };
+      }
+      handelsubmit(postData);
+      //----에이피아이로 쏘기
+      try {
+        console.log("전송완료", postData);
+      } catch {
+        getDoSubmit(false);
+      } finally {
+      }
+    }
+  }, [doSubmit]);
+
   const [showStickerModal, setShowStickerModal] = useState(false);
   const getShowStickerModal = bool => {
     setShowStickerModal(bool);
@@ -35,10 +89,6 @@ function BlackBoardEditor({ type, data }) {
       })
     );
   };
-
-  useEffect(() => {
-    console.log(stickers);
-  }, [stickers]);
 
   const getWidthEm = width => {
     return width * (1 / emSize);
@@ -70,7 +120,6 @@ function BlackBoardEditor({ type, data }) {
   const [mirror, setMirror] = useState(1);
   const mirrorHandeler = () => {
     if (currentSticker != 0) {
-      console.log("클릭");
       setMirror(mirror * -1);
       stickers[currentSticker - 1].mirror = mirror;
     }

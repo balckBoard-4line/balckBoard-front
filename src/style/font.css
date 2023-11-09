@@ -1,3 +1,12 @@
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 .pink {
   color: #ff9595;
   font-size: inherit;
