@@ -1,25 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "./style";
 import BlackBoardEditor from "../../components/blackBoard/BlackBoardEditor";
 import Button from "../../components/common/button/Button";
 import Input from "../../components/common/input/Input";
 
-// import { Link } from "react-router-dom";
-
 function TitleCreate() {
-  // const [inputText, setInputText] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
 
-  // const handleInputChange = (event) => {
-  //   setInputText(event.target.value);
-  // };
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState("12:00");
+  const getCurrentDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
 
-  const handleDateChange = date => {
+    month = month < 10 ? `0${month}` : month;
+    day = day < 10 ? `0${day}` : day;
+
+    return `${year}-${month}-${day}`;
+  };
+
+  const getCurrentTime = () => {
+    const today = new Date();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+
+    hours = hours < 10 ? `0${hours}` : hours;
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+
+    return `${hours}:${minutes}`;
+  };
+
+  useEffect(() => {
+    setSelectedDate(getCurrentDate());
+    setSelectedTime(getCurrentTime());
+  }, []);
+
+  const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
-  const handleTimeChange = time => {
+  const handleTimeChange = (time) => {
     setSelectedTime(time);
   };
 
@@ -61,8 +82,8 @@ function TitleCreate() {
         <S.BlackBoardInput>
           <S.BlackBoardContent>졸업 날짜</S.BlackBoardContent>
           <S.BlackBoardInputWrapper>
-            <S.BlackBoardInputArea type="date" />
-            <S.BlackBoardInputArea type="time" />
+            <S.BlackBoardInputArea type="date" value={selectedDate} onChange={(e) => handleDateChange(e.target.value)} />
+            <S.BlackBoardInputArea type="time" value={selectedTime} onChange={(e) => handleTimeChange(e.target.value)} />
           </S.BlackBoardInputWrapper>
         </S.BlackBoardInput>
       </S.PageContent>
