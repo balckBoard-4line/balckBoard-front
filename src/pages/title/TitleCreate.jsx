@@ -5,14 +5,23 @@ import Button from "../../components/common/button/Button";
 import Input from "../../components/common/input/Input";
 
 function TitleCreate() {
+  const [title, setTitle] = useState("");
+  const getTitle = title => {
+    setTitle(title);
+  };
+
+  const [introduction, setIntroduction] = useState("");
+  const getIntroduction = introduction => {
+    setIntroduction(introduction);
+  };
+
+  const [email, setEmail] = useState("");
+  const getEmail = email => {
+    setEmail(email);
+  };
+
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
-
-  const [inputText, setInputText] = useState({
-    title: "",
-    description: "",
-    email: ""
-  });
 
   const getCurrentDate = () => {
     const today = new Date();
@@ -42,31 +51,26 @@ function TitleCreate() {
     setSelectedTime(getCurrentTime());
   }, []);
 
-  const handleDateChange = (date) => {
+  const handleDateChange = date => {
     setSelectedDate(date); // 날짜 업데이트
-    console.log('Selected Date after update:', date);
+    console.log("Selected Date after update:", date);
   };
 
-  const handleTimeChange = (time) => {
+  const handleTimeChange = time => {
     setSelectedTime(time); // 시간 업데이트
-    console.log('Selected Time after update:', time);
+    console.log("Selected Time after update:", time);
   };
 
   const navigate = useNavigate();
 
   const handleGoToLetterEditor = () => {
-    const data = {
-      title: inputText.title,
-      introduction: inputText.description,
-      email: inputText.email,
-      graduateDate: `${selectedDate}-${selectedTime.replace(":", "-")}`
-    };
-
-    console.log("전달할 데이터:", data); // 데이터 확인
-
-
-    navigate("/letterEditor/:url", {
-      state: data
+    navigate("/titleEditor", {
+      state: {
+        title: title,
+        introduction: introduction,
+        email: email,
+        graduateDate: `${selectedDate}-${selectedTime.replace(":", "-")}`
+      }
     });
   };
 
@@ -83,9 +87,7 @@ function TitleCreate() {
             maxcount={15}
             font="Pretendard"
             placeholder={"칠판의 제목을 입력해주세요."}
-            onChange={event => setInputText({ ...inputText, title: event.target.value })
-            }
-
+            getValue={getTitle}
           />
         </S.BlackBoardInput>
 
@@ -95,7 +97,7 @@ function TitleCreate() {
             maxcount={20}
             font="Pretendard"
             placeholder={"칠판의 소개를 입력해주세요."}
-            onChange={event => setInputText({ ...inputText, description: event.target.value })}
+            getValue={getIntroduction}
           />
         </S.BlackBoardInput>
 
@@ -105,21 +107,33 @@ function TitleCreate() {
             maxcount={999999999}
             font="Pretendard"
             placeholder={"example@example.com"}
+            getValue={getEmail}
             showInputCount={false}
-            onChange={event => setInputText({ ...inputText, email: event.target.value })}
           />
         </S.BlackBoardInput>
 
         <S.BlackBoardInput>
           <S.BlackBoardContent>졸업 날짜</S.BlackBoardContent>
           <S.BlackBoardInputWrapper>
-            <S.BlackBoardInputArea type="date" value={selectedDate} onChange={(event) => handleDateChange(event.target.value)} />
-            <S.BlackBoardInputArea type="time" value={selectedTime} onChange={(event) => handleTimeChange(event.target.value)} />
+            <S.BlackBoardInputArea
+              type="date"
+              value={selectedDate}
+              onChange={event => handleDateChange(event.target.value)}
+            />
+            <S.BlackBoardInputArea
+              type="time"
+              value={selectedTime}
+              onChange={event => handleTimeChange(event.target.value)}
+            />
           </S.BlackBoardInputWrapper>
         </S.BlackBoardInput>
       </S.PageContent>
 
-      <Button content={"이렇게 할게요"} type={"white"} onClick={handleGoToLetterEditor} />
+      <Button
+        content={"이렇게 할게요"}
+        type={"white"}
+        buttonHandeler={handleGoToLetterEditor}
+      />
     </S.PageWrapper>
   );
 }

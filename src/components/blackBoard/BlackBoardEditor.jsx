@@ -138,7 +138,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
 
   return (
     <S.BlackBoardEditorWrapper $emsize={emSize + "px"}>
-      <Header getShowStickerModal={getShowStickerModal} />
+      <Header type={type} getShowStickerModal={getShowStickerModal} />
 
       <S.BlackBoardEditorContent>
         <S.BlackBoardEditorStickerArea>
