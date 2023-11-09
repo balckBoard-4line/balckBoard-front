@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "", element: <Main /> },
-      { path: "/titleCreate/:url", element: <TitleCreate /> },
-      { path: "/titleEditor/:url", element: <TitleEditor /> },
+      { path: "/titleCreate", element: <TitleCreate /> },
+      { path: "/titleEditor", element: <TitleEditor /> },
       { path: "/letterCreate/:url", element: <LetterCreate /> },
       { path: "/letterEditor/:url", element: <LetterEditor /> },
       { path: "/userBlackBoard/:url", element: <UserBlackBoard /> },

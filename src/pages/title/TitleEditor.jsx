@@ -19,7 +19,6 @@ function TitleEditor() {
         <BlackBoardEditor type={"title"} data={data} />
       </S.PageContent>
 
-      <div onClick={handelsubmit}>클릭</div>
       <Button content={"이렇게 할래요"} type={"white"} />
     </S.PageWrapper>
   );

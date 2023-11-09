@@ -47,17 +47,17 @@ function Main() {
 
   return (
     <S.MainWrapper>
-      <Link to={`userBlackBoard/${1}`}>칠판 바로가기</Link>
+      <Link to={`userBlackBoard/test-url`}>칠판 바로가기</Link>
       <br />
-      <Link to={`titleCreate/${1}`}>칠판 만들기</Link>
+      <Link to={`titleCreate`}>칠판 만들기</Link>
       <br />
-      <Link to={`titleEditor/${1}`}>칠판 꾸미기 바로가기</Link>
+      <Link to={`titleEditor`}>칠판 꾸미기 바로가기</Link>
       <br />
-      <Link to={`letterCreate/${1}`}>편지 쓰기 바로가기</Link>
+      <Link to={`letterCreate/test-url}`}>편지 쓰기 바로가기</Link>
       <br />
-      <Link to={`letterEditor/${1}`}>편지 꾸미기 바로가기</Link>
+      <Link to={`letterEditor/test-url`}>편지 꾸미기 바로가기</Link>
       <br />
-      <Link to={`visitors/${1}`}>편지쓴명단 바로가기</Link>
+      <Link to={`visitors/test-url`}>편지쓴명단 바로가기</Link>
       <FloatingText>{displayedText}</FloatingText>
       <S.MainBoardnum2>
         <S.MainBoardnum2logo>
