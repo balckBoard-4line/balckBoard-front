@@ -7,6 +7,9 @@ import Button from "../../components/common/button/Button";
 
 function LetterCreatePage() {
   const [doSubmit, setDoSubmit] = useState(false);
+  const getDoSubmit = bool => {
+    setDoSubmit(bool);
+  };
 
   const handlePost = () => {
     setDoSubmit(true);
@@ -16,7 +19,7 @@ function LetterCreatePage() {
     <S.PageWrapper style={{ backgroundColor: "#345342" }}>
       <InputHeader content={"메세지를 남겨주세요"} />
       <S.PageContent>
-        <LetterTextEditor doSubmit={doSubmit} />
+        <LetterTextEditor doSubmit={doSubmit} getDoSubmit={getDoSubmit} />
       </S.PageContent>
 
       <Button
