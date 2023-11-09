@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 import * as S from "./style";
 import { Link, useParams } from "react-router-dom";
 
 import { API } from "../../api/axios";
 
 function Visitors() {
-  const [data, setData] = useState("");
+  const [nicknameList, setNicknameList] = useState([]);
 
   const params = useParams();
 
   const fetchLanternsData = async () => {
     try {
       const response = await API.get(`api/visitor?id=${params.url}`);
-      setData(response.data);
+      setNicknameList(response.data.nickname);
     } catch (error) {
       console.log("에러~", error);
     }
@@ -28,7 +28,11 @@ function Visitors() {
           <S.Visitorsbox>
             <S.VisitorTitle>다녀간 사람</S.VisitorTitle>
             <S.Visitorcontent>
-              <S.Visitorcontentin>{data}</S.Visitorcontentin>
+              <S.Visitorcontentin>
+                {nicknameList?.map((nickname, index) => (
+                  <span key={index}>{nickname}</span>
+                ))}
+              </S.Visitorcontentin>
             </S.Visitorcontent>
           </S.Visitorsbox>
         </S.Visitors1>
