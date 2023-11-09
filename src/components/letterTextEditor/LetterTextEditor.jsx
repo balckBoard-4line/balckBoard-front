@@ -4,7 +4,7 @@ import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Input from "../common/input/Input";
 import { useNavigate, useParams } from "react-router-dom";
 
-function LetterTextEditor({ doSubmit }) {
+function LetterTextEditor({ nickname, getNickname, doSubmit }) {
   const params = useParams();
 
   //===반응형 사이즈 측정
@@ -32,11 +32,6 @@ function LetterTextEditor({ doSubmit }) {
   }, [doSubmit]);
 
   //--------------제출될 데이터들...
-
-  const [nickname, setNickname] = useState("");
-  const getNickname = nickname => {
-    setNickname(nickname);
-  };
 
   const [currentFont, setCurrentFont] = useState("Alien");
   const [currentColor, setCurrentColor] = useState("white");

@@ -122,11 +122,15 @@ function TitleCreate() {
         </S.BlackBoardInput>
       </S.PageContent>
 
-      <Button
-        content={"이렇게 할게요"}
-        type={"white"}
-        buttonHandeler={handleGoToLetterEditor}
-      />
+      {title.length * introduction.length * email.length != 0 ? (
+        <Button
+          content={"이렇게 할게요"}
+          type={"white"}
+          buttonHandeler={handleGoToLetterEditor}
+        />
+      ) : (
+        <Button content={"내용을 전부 입력해주세요!"} type={"grey"} />
+      )}
     </S.PageWrapper>
   );
 }

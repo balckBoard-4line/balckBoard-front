@@ -20,9 +20,16 @@ export const ButtonArea = styled.div`
   cursor: pointer;
 
   color: ${props =>
-    props.$type == "white" ? props => props.theme.colors.main1 : "white"};
-  background-color: ${props =>
-    props.$type == "white" ? "white" : props => props.theme.colors.main1};
+    props.$type == "black" ? "white" : props => props.theme.colors.main1};
 
-  border: 2px solid white;
+  background-color: ${props =>
+    props.$type == "black"
+      ? props.theme.colors.main1
+      : props.$type == "grey"
+      ? props.theme.colors.grey1
+      : "white"};
+
+  border: 2px solid;
+  border-color: ${props =>
+    props.$type == "grey" ? props.theme.colors.grey1 : "white"};
 `;
