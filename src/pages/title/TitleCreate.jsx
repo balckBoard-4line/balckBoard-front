@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import Button from "../../components/common/button/Button";
 import Input from "../../components/common/input/Input";
+import InputHeader from "../../components/layout/header/InputHeader";
 
 function TitleCreate() {
   const [title, setTitle] = useState("");
@@ -77,40 +78,32 @@ function TitleCreate() {
   return (
     <S.PageWrapper style={{ backgroundColor: "#345342" }}>
       <S.PageContent>
-        <S.HeaderWrapper>
-          <S.HeaderContent>내 칠판 만들기</S.HeaderContent>
-        </S.HeaderWrapper>
+        <InputHeader content={"내 칠판 만들기"} />
 
-        <S.BlackBoardInput>
-          <S.BlackBoardContent>칠판의 제목</S.BlackBoardContent>
-          <Input
-            maxcount={15}
-            font="Pretendard"
-            placeholder={"칠판의 제목을 입력해주세요."}
-            getValue={getTitle}
-          />
-        </S.BlackBoardInput>
+        <Input
+          title={"칠판의 제목"}
+          maxcount={15}
+          font="Pretendard"
+          placeholder={"칠판의 제목을 입력해주세요."}
+          getValue={getTitle}
+        />
 
-        <S.BlackBoardInput>
-          <S.BlackBoardContent>칠판의 소개</S.BlackBoardContent>
-          <Input
-            maxcount={20}
-            font="Pretendard"
-            placeholder={"칠판의 소개를 입력해주세요."}
-            getValue={getIntroduction}
-          />
-        </S.BlackBoardInput>
+        <Input
+          title={"칠판의 소개"}
+          maxcount={20}
+          font="Pretendard"
+          placeholder={"칠판의 소개를 입력해주세요."}
+          getValue={getIntroduction}
+        />
 
-        <S.BlackBoardInput>
-          <S.BlackBoardContent>칠판을 받아보실 이메일</S.BlackBoardContent>
-          <Input
-            maxcount={999999999}
-            font="Pretendard"
-            placeholder={"example@example.com"}
-            getValue={getEmail}
-            showInputCount={false}
-          />
-        </S.BlackBoardInput>
+        <Input
+          title={"칠판을 받아보실 이메일"}
+          maxcount={999999999}
+          font="Pretendard"
+          placeholder={"example@example.com"}
+          getValue={getEmail}
+          showInputCount={false}
+        />
 
         <S.BlackBoardInput>
           <S.BlackBoardContent>졸업 날짜</S.BlackBoardContent>

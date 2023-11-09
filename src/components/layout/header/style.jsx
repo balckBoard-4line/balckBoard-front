@@ -7,7 +7,7 @@ export const HeaderWrapper = styled.div`
   padding-top: 15px;
   padding-bottom: 10px;
 
-  padding: 0px 15px;
+  padding: 0px 20px;
   margin-bottom: 10px;
 
   z-index: 1;

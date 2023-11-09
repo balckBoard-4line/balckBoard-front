@@ -1,8 +1,22 @@
 import styled from "styled-components";
 
+export const InputContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 0px 15px;
+  margin-bottom: 15px;
+`;
+
+export const InputTitle = styled.div`
+  font-size: 16px;
+  padding: 0px 5px;
+  margin-bottom: 10px;
+`;
 export const InputWrapper = styled.div`
   width: 100%;
-  padding: 0 15px;
+
   display: flex;
   flex-direction: column;
   input::placeholder {

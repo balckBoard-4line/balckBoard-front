@@ -51,38 +51,36 @@ export const HeaderContent = styled.div`
 export const BlackBoardInput = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 0px 0px 0px;
+
+  padding: 0px 15px;
+  margin-top: 25px;
 `;
 
-export const BlackBoardContent = styled.label`
+export const BlackBoardContent = styled.div`
   font-size: 16px;
-  font-weight: 'Regular';
-  text-align: left;
-  align-self: flex-start;
-  padding: 10px 0px 8px 20px;
+  padding: 0px 5px;
+  margin-bottom: 10px;
 `;
 
 export const BlackBoardInputBox = styled.input`
-    font-family: 'Pretendard';
-    width: 345px;
-    height: 49px;
-    border-radius: 5px;
-    color: white;
-    background-color: #AEBAB3; 
+  font-family: "Pretendard";
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  background-color: ${props => props.theme.colors.grey1};
+
+  font-size: 16px;
+  ::placeholder {
+    font-family: "Pretendard";
     font-size: 16px;
-    ::placeholder {
-        font-family: 'Pretendard';
-        font-size: 16px; 
-        color: #AEBAB3; 
-    }
-    align-self: center;
+    color: ${props => props.theme.colors.grey1};
+  }
+  align-self: center;
 `;
 
 export const BlackBoardInputWrapper = styled.div`
   width: 100%;
-  padding: 10px 15px;
+
   display: flex;
   flex-direction: column;
   input::placeholder {
@@ -90,11 +88,13 @@ export const BlackBoardInputWrapper = styled.div`
     color: ${props => props.theme.colors.font1};
   }
 `;
+
 export const BlackBoardInputArea = styled.input`
   font-size: 16px;
   color: white;
   padding: 15px 20px;
-  margin: 10px 0px 0px 0px;
+
+  margin-bottom: 10px;
 
   border-radius: 10px;
   background-color: ${props => props.theme.colors.grey1};
@@ -106,7 +106,6 @@ export const BlackBoardInputArea = styled.input`
   &::-webkit-clock {
     filter: invert(100%); /* 시계 아이콘 색상을 흰색으로 설정 */
   }
-
 `;
 
 export const InputCount = styled.div`
