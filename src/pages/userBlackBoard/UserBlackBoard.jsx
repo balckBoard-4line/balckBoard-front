@@ -36,18 +36,21 @@ function UserBlackBoard() {
     setIsLaunch(deadline < currentTime);
   }, [data]);
 
+  useEffect(() => {
+    console.log(isLaunch);
+  }, [isLaunch]);
+
   const getIsLaunch = bool => {
     setIsLaunch(bool);
   };
 
   return (
     <S.PageWrapper style={{ position: isLaunch ? "" : "fixed" }}>
-      {moment(data.graduateDate) > moment() ? (
+      {isLaunch ? (
         <AfterLaunch data={data} />
       ) : (
         <BeforeLaunch getIsLaunch={getIsLaunch} data={data} />
       )}
-      아왜안됨? {isLaunch}
     </S.PageWrapper>
   );
 }
