@@ -33,7 +33,7 @@ function UserBlackBoard() {
     const currentTime = moment();
     console.log("데드라인지남?", deadline < currentTime, deadline, currentTime);
     setIsLaunch(deadline < currentTime);
-  }, []);
+  }, [data]);
   const getIsLaunch = bool => {
     setIsLaunch(bool);
   };
