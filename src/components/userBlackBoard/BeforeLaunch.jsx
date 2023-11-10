@@ -38,10 +38,6 @@ function BeforeLaunch({ data, getIsLaunch }) {
         setTimeLeft({ days, hours, minutes, seconds });
         setLoading(false); // 시간이 설정되면 로딩을 해제
       }
-      if (moment(data.graduateDate).valueOf() - moment().valueOf() < 0) {
-        console.log("비포에서 넘어감");
-        getIsLaunch(true);
-      }
     }, 1000);
 
     return () => {
