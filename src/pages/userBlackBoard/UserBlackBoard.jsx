@@ -33,7 +33,7 @@ function UserBlackBoard() {
     console.log(deadline);
     const currentTime = moment();
 
-    setIsLaunch(deadline < currentTime);
+    setIsLaunch(deadline.isBefore(currentTime));
   }, [data]);
 
   useEffect(() => {
