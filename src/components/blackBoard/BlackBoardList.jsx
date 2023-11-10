@@ -8,6 +8,7 @@ function BlackBoardList({ data }) {
 
   return (
     <S.BlackBoardListWrapper $emsize={emSize + "px"}>
+      {moment(data.graduateDate)}
       <BlackBoard data={data} type={"title"} />
       {data?.letters.map(letter => (
         <BlackBoard key={letter.blackboardId} data={letter} type={"letter"} />
