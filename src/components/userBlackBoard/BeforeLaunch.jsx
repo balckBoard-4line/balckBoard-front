@@ -1,56 +1,21 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-
-import { Link, useParams } from "react-router-dom";
-import * as S from "./style";
+import { useParams, Link } from "react-router-dom";
 
 function BeforeLaunch({ data, getIsLaunch }) {
   const params = useParams();
 
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
-  const [loading, setLoading] = useState(true);
+  const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {
-    const deadline = moment(data.graduateDate).valueOf();
-
-    const interval = setInterval(() => {
-      const currentTime = moment().valueOf();
-      const timeDifference = deadline - currentTime;
-
-      console.log(timeDifference);
-
-      if (timeDifference <= 0) {
-        clearInterval(interval);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      } else {
-        console.log("00", timeDifference);
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-          (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-        );
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-        setTimeLeft({ days, hours, minutes, seconds });
-        setLoading(false); // 시간이 설정되면 로딩을 해제
-      }
+    const timer = setInterval(() => {
+      setTimeLeft(moment(data.graduateDate).valueOf() - moment().valueOf());
     }, 1000);
-
     return () => {
-      clearInterval(interval);
+      clearInterval(timer);
     };
-  }, []);
+  });
 
-  const formatTime = time => {
-    return time < 10 ? `0${time}` : time;
-  };
   const handleCopyURL = () => {
     const urlToCopy = window.location.href;
     navigator.clipboard
@@ -70,13 +35,7 @@ function BeforeLaunch({ data, getIsLaunch }) {
             <S.Bfnum1timewrp>
               <S.Bfnum1time>
                 <S.Bfnum1time1>칠판 공개까지</S.Bfnum1time1>
-                <S.Bfnum1time2>
-                  {`${formatTime(timeLeft.days)} 일 ${formatTime(
-                    timeLeft.hours
-                  )} 시간 ${formatTime(timeLeft.minutes)} 분 ${formatTime(
-                    timeLeft.seconds
-                  )} 초`}
-                </S.Bfnum1time2>
+                <S.Bfnum1time2>{timeLeft}</S.Bfnum1time2>
               </S.Bfnum1time>
             </S.Bfnum1timewrp>
             <S.Bfnum1link>
