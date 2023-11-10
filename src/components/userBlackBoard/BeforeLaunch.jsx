@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import * as S from "./style";
 import moment from "moment";
 import { useParams, Link } from "react-router-dom";
 
