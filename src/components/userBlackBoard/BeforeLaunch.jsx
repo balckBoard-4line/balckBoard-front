@@ -22,6 +22,8 @@ function BeforeLaunch({ data, getIsLaunch }) {
       const currentTime = moment().valueOf();
       const timeDifference = deadline - currentTime;
 
+      console.log(timeDifference);
+
       if (timeDifference <= 0) {
         clearInterval(interval);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
