@@ -40,7 +40,11 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
       console.log(response);
 
       if (response.status === 201) {
-        window.location.href = `/userBlackboard/${response.data.url}`;
+        if (type == "title") {
+          window.location.href = `/userBlackboard/${response.data.url}`;
+        } else {
+          window.location.href = `/userBlackboard/${params.url}`;
+        }
       }
     } catch (error) {
       console.log("에러~", error);
