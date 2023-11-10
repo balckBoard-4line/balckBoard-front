@@ -9,7 +9,7 @@ function BlackBoardList({ data }) {
   return (
     <S.BlackBoardListWrapper $emsize={emSize + "px"}>
       <BlackBoard data={data} type={"title"} />
-      {data.letters.map(letter => (
+      {data?.letters.map(letter => (
         <BlackBoard key={letter.blackboardId} data={letter} type={"letter"} />
       ))}
     </S.BlackBoardListWrapper>
