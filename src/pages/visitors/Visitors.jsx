@@ -30,7 +30,7 @@ function Visitors() {
             <S.VisitorsTitle>다녀간 사람</S.VisitorsTitle>
             <S.VisitorsContent>
               <S.VisitorsContentIn>
-                {nicknameList.map((nickname, index) => (
+                {nicknameList?.map((nickname, index) => (
                   <span key={index}>
                     {nicknameList.length - 1 == index
                       ? nickname
