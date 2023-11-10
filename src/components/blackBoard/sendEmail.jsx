@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 function SendEmail() {
   const location = useLocation();
   const data = { ...location.state };
+
   const sendEmail = e => {
     e.preventDefault();
 
@@ -27,10 +28,10 @@ function SendEmail() {
   };
   const form = useRef();
 
-  useEffect(() => {
-    form.submit();
-    window.location.href = `/userBlackboard/${response.data.url}`;
-  }, []);
+  //   useEffect(() => {
+  //     form.submit();
+  //     window.location.href = `/userBlackboard/${response.data.url}`;
+  //   }, []);
 
   return (
     <form ref={form} onSubmit={sendEmail}>
@@ -42,6 +43,7 @@ function SendEmail() {
         name="url"
         value={`https://congchugraduate.netlify.app/userBlackboard/${data.response.data.url}`}
       />
+      <input type="submit" />
     </form>
   );
 }
