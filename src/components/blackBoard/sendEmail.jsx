@@ -28,11 +28,6 @@ function SendEmail() {
   };
   const form = useRef();
 
-  // useEffect(() => {
-  //   form.submit();
-  //   window.location.href = `/userBlackboard/${response.data.url}`;
-  // }, []);
-
   return (
     <form ref={form} onSubmit={sendEmail}>
       <input type="text" name="title" value={data.title} />
@@ -43,7 +38,7 @@ function SendEmail() {
         name="url"
         value={`https://congchugraduate.netlify.app/userBlackboard/${data.url}`}
       />
-      <button value={"제출하기"} />
+      <button type="submit">제출하기</button>
     </form>
   );
 }
