@@ -34,7 +34,7 @@ function Main() {
     try {
       const response = await API.get(`api/blackboards`);
 
-      setData(response.data.blackboard_count);
+      setData(response.data.blackboardCount);
     } catch (error) {
       console.log("에러~", error);
     }
