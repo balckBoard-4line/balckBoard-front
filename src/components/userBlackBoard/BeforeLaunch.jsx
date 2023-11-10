@@ -6,11 +6,24 @@ import { useParams, Link } from "react-router-dom";
 function BeforeLaunch({ data, getIsLaunch }) {
   const params = useParams();
 
-  const [timeLeft, setTimeLeft] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({
+    day: 0,
+    hour: 0,
+    minute: 0,
+    second: 0
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(moment(data.graduateDate).valueOf() - moment().valueOf());
+      const timeDiff = moment(data.graduateDate).valueOf() - moment().valueOf();
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+      setTimeLeft({ day: days, hour: hours, minute: minutes, second: seconds });
     }, 1000);
     return () => {
       clearInterval(timer);
@@ -36,7 +49,10 @@ function BeforeLaunch({ data, getIsLaunch }) {
             <S.Bfnum1timewrp>
               <S.Bfnum1time>
                 <S.Bfnum1time1>칠판 공개까지</S.Bfnum1time1>
-                <S.Bfnum1time2>{timeLeft}</S.Bfnum1time2>
+                <S.Bfnum1time2>
+                  {timeLeft.day}일 {timeLeft.hour}시간 {timeLeft.minute}분{" "}
+                  {timeLeft.second}초
+                </S.Bfnum1time2>
               </S.Bfnum1time>
             </S.Bfnum1timewrp>
             <S.Bfnum1link>
