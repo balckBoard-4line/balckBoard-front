@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { BsGithub, BsInstagram } from "react-icons/bs";
 import Button from "../../components/common/button/Button";
+import { API } from "../../api/axios";
 
 const floatingAnimation = keyframes`
   0% {
@@ -28,7 +29,21 @@ const FloatingText = styled.div`
 `;
 
 function Main() {
-  const initialText = "지금까지 개의 칠판이 만들어졌어요!";
+  const [data, setData] = useState(0);
+  const fetchLanternsData = async () => {
+    try {
+      const response = await API.get(`api/blackboards`);
+
+      setData(response.data.blackboard_count);
+    } catch (error) {
+      console.log("에러~", error);
+    }
+  };
+  useEffect(() => {
+    fetchLanternsData();
+  }, []);
+
+  const initialText = "지금까지" + data + "개의 칠판이 만들어졌어요!";
   const [displayedText, setDisplayedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
 
