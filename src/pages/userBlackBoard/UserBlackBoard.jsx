@@ -45,7 +45,7 @@ function UserBlackBoard() {
       ) : (
         <BeforeLaunch getIsLaunch={getIsLaunch} data={data} />
       )}
-      {isLaunch}
+      아왜안됨? {isLaunch}
     </S.PageWrapper>
   );
 }
