@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import * as S from "./style";
 
 function BeforeLaunch({ data, getIsLaunch }) {
