@@ -70,7 +70,7 @@ function TitleCreate() {
         title: title,
         introduction: introduction,
         email: email,
-        graduateDate: `${selectedDate}-${selectedTime.replace(":", "-")}`
+        graduateDate: `${selectedDate} ${selectedTime}`
       }
     });
   };
