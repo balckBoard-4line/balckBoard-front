@@ -35,13 +35,14 @@ function UserBlackBoard() {
     console.log("데드라인지남?", deadline < currentTime, deadline, currentTime);
     setIsLaunch(deadline < currentTime);
   }, [data]);
+
   const getIsLaunch = bool => {
     setIsLaunch(bool);
   };
 
   return (
     <S.PageWrapper style={{ position: isLaunch ? "" : "fixed" }}>
-      {moment(data.graduateDate) < moment() ? (
+      {moment(data.graduateDate) > moment() ? (
         <AfterLaunch data={data} />
       ) : (
         <BeforeLaunch getIsLaunch={getIsLaunch} data={data} />
