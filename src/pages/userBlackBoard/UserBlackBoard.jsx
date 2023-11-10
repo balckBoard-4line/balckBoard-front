@@ -35,10 +35,10 @@ function UserBlackBoard() {
     console.log(
       moment(data.graduateDate).valueOf(),
       currentTime.valueOf(),
-      moment(data.graduateDate).valueOf() - currentTime.valueOf(),
-      moment(data.graduateDate).valueOf() - currentTime.valueOf() < 0
+      moment(data.graduateDate).valueOf() - moment().valueOf(),
+      moment(data.graduateDate).valueOf() - moment().valueOf() < 0
     );
-    setIsLaunch(data.graduateDate.valueOf() - currentTime.valueOf() < 0);
+    setIsLaunch(moment(data.graduateDate).valueOf() - moment().valueOf() < 0);
   }, [data]);
 
   useEffect(() => {
