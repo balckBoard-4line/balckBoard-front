@@ -6,9 +6,9 @@ import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Header from "../layout/header/StickerEditorHeader";
 import BlackBoardStickerModal from "./BlackBoardStickerModal";
 import BlackBoard from "./BlackBoard";
-import { useNavigate, useParams } from "react-router-dom";
 
 import { API } from "../../api/axios";
+import { useNavigate, useParams } from "react-router-dom";
 
 function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
   const params = useParams();
