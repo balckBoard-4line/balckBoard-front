@@ -93,7 +93,7 @@ function BeforeLaunch({ data, getIsLaunch }) {
               </Link>
             </S.Bfnum3in2wrp>
             <S.Bfnum3in3wrp>
-              <Link to="/titleCreate/1">
+              <Link to="/titleCreate">
                 <S.Bfnum3in3>
                   <S.Bfnum3in3in1>나도 칠판 만들기</S.Bfnum3in3in1>
                   <S.Bfnum3in3in2> {">"}</S.Bfnum3in3in2>
