@@ -52,7 +52,7 @@ function SendEmail() {
         getValue={getEmail}
         showInputCount={false}
       />
-      <Button type={"submit"} buttonHandeler={onSubmit()} />
+      <button>제출하기</button>
     </form>
   );
 }
