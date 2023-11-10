@@ -37,7 +37,9 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
         });
       }
 
-      console.log(response);
+      if (response.status === 201) {
+        window.location.href = `/userBlackbord/${response.data.url}`;
+      }
     } catch (error) {
       console.log("에러~", error);
       getDoSubmit(false);

@@ -15,7 +15,8 @@ function UserBlackBoard() {
   const fetchLanternsData = async () => {
     try {
       const response = await API.get(`api/blackboard/?id=${params.url}`);
-      console.log(response);
+      console.log(response.data);
+      setData(response.data);
     } catch (error) {
       console.log("에러~", error);
     }
