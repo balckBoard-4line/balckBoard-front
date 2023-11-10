@@ -23,8 +23,12 @@ function BeforeLaunch({ data, getIsLaunch }) {
       const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
+      if (timeDiff < 0) {
+        getIsLaunch(true);
+      }
       setTimeLeft({ day: days, hour: hours, minute: minutes, second: seconds });
     }, 1000);
+
     return () => {
       clearInterval(timer);
     };
