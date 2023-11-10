@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
-export const MainWrapper = styled.div`
+
+export const PageWrapper = styled.div`
   width: 100%;
   max-width: 420px;
 
@@ -14,56 +15,52 @@ export const MainWrapper = styled.div`
   }
 `;
 
-export const VisitorWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+export const PageContent = styled.div`
   flex-grow: 1;
-  padding: 20px 15px;
-`;
-
-export const VisitorTitle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  width: 100%;
-  padding: 20px;
-`;
-export const Visitorcontent = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-grow: 1;
-
-  overflow: scroll;
-`;
-export const Visitorcontentin = styled.div`
-  display: flex;
-  justify-content: start;
-
-  font-size: 15px;
-  padding: 0 30px;
-
-  flex-wrap: wrap;
-  line-height: 2;
-  span {
-    flex-shrink: 0;
-  }
-`;
-
-export const Visitorsbox = styled.div`
-  display: flex;
-  width: 100%;
-  flex-grow: 1;
-  flex-direction: column;
-  border: 3px solid white;
-  border-radius: 20px;
+  overflow-y: scroll;
 `;
 
 export const VisitorBrown = styled.div`
   margin-top: 20px;
   width: 100%;
+  height: 100%;
   height: 20px;
   background-color: #715948;
+`;
+
+export const VisitorsWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
+  padding: 20px 15px;
+`;
+
+export const VisitorsBox = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: solid 2px white;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const VisitorsTitle = styled.div`
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+`;
+
+export const VisitorsContent = styled.div`
+  flex-grow: 1;
+  width: 100%;
+  overflow: scroll;
+`;
+
+export const VisitorsContentIn = styled.div`
+  width: 100%;
+  span {
+    line-height: 2;
+  }
 `;
