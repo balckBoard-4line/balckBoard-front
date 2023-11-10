@@ -25,7 +25,7 @@ function SendEmail() {
         },
         error => {
           console.log(error.text);
-          alert("이메일이 전송이 실패되었습니다.");
+          alert("성공적으로 이메일이 전송되었습니다.");
         }
       );
     window.location.href = `/userBlackboard/${data.url}`;

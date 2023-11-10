@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import * as S from "./style";
 import moment from "moment";
 import { useParams, Link } from "react-router-dom";
+import BlackBoard from "../blackBoard/BlackBoard";
+import Button from "../common/button/Button";
 
 function BeforeLaunch({ data, getIsLaunch }) {
   const params = useParams();
@@ -45,66 +47,43 @@ function BeforeLaunch({ data, getIsLaunch }) {
         console.error("URL 복사에 실패했습니다: " + error);
       });
   };
+
   return (
-    <div>
-      <S.BfWrapper>
-        <div>
-          <S.Bfnum1>
-            <S.Bfnum1timewrp>
-              <S.Bfnum1time>
-                <S.Bfnum1time1>칠판 공개까지</S.Bfnum1time1>
-                <S.Bfnum1time2>
-                  {timeLeft.day}일 {timeLeft.hour}시간 {timeLeft.minute}분{" "}
-                  {timeLeft.second}초
-                </S.Bfnum1time2>
-              </S.Bfnum1time>
-            </S.Bfnum1timewrp>
-            <S.Bfnum1link>
-              <S.Bfnum1linkwrp>
-                <img
-                  src="/LinkIcon.png"
-                  alt="Link Icon"
-                  onClick={handleCopyURL}
-                  style={{ cursor: "pointer" }}
-                />
-              </S.Bfnum1linkwrp>
-            </S.Bfnum1link>
-          </S.Bfnum1>
-          <S.Bfnum2>
-            <S.Bfnum2title>{data.title}</S.Bfnum2title>
-            <br />
-            <S.Bfnum2subtitle>{data.introduction}</S.Bfnum2subtitle>
-          </S.Bfnum2>
-          <S.Bfnum3>
-            <S.Bfnum3in1wrp>
-              <Link
-                to={`/letterCreate/${params.url}`}
-                style={{ width: "100%", height: "100%" }}
-              >
-                <S.Bfnum3in1>칠판 편지남기기</S.Bfnum3in1>
-              </Link>
-            </S.Bfnum3in1wrp>
-            <S.Bfnum3in2wrp>
-              <Link
-                to={`/visitors/${params.url}`}
-                style={{ width: "100%", height: "100%" }}
-              >
-                <S.Bfnum3in2>다녀간 사람</S.Bfnum3in2>
-              </Link>
-            </S.Bfnum3in2wrp>
-            <S.Bfnum3in3wrp>
-              <Link to="/titleCreate">
-                <S.Bfnum3in3>
-                  <S.Bfnum3in3in1>나도 칠판 만들기</S.Bfnum3in3in1>
-                  <S.Bfnum3in3in2> {">"}</S.Bfnum3in3in2>
-                </S.Bfnum3in3>
-              </Link>
-            </S.Bfnum3in3wrp>
-          </S.Bfnum3>
-          <S.Bfnum4inbrown />
-        </div>
-      </S.BfWrapper>
-    </div>
+    <S.PageWrapper>
+      <S.LeftDateWrapper>
+        <S.LeftDateAbout>
+          <S.LeftDateAbout>칠판 공개까지</S.LeftDateAbout>
+          <S.LeftDateContent>
+            {timeLeft.day}일 {timeLeft.hour}시간 {timeLeft.minute}분 //{" "}
+            {timeLeft.second}초
+          </S.LeftDateContent>
+        </S.LeftDateAbout>
+        <S.CopyBtn src="/LinkIcon.png" onClick={handleCopyURL} />
+      </S.LeftDateWrapper>
+
+      <BlackBoard data={data} type={"title"} />
+
+      <S.FooterWrapper>
+        <Link
+          to={`/letterCreate/${params.url}`}
+          style={{ marginBottom: "15px" }}
+        >
+          <Button content={"칠판 꾸며주기"} type={"white"} />
+        </Link>
+        <Link to={`/visitors/${params.url}`} style={{ marginBottom: "15px" }}>
+          <Button content={"다녀간 사람"} type={"black"} />
+        </Link>
+
+        <Link>
+          <S.WantToMakeBtn>
+            <div>나도 칠판 만들기</div>
+            <span> {">"}</span>
+          </S.WantToMakeBtn>
+        </Link>
+
+        <S.Wood />
+      </S.FooterWrapper>
+    </S.PageWrapper>
   );
 }
 
