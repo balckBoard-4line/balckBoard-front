@@ -27,7 +27,7 @@ function SendEmail() {
           alert("이메일이 전송이 실패되었습니다.");
         }
       );
-    window.location.href = `/userBlackboard/${url}`;
+    window.location.href = `/userBlackboard/${data.url}`;
   };
   const form = useRef();
 
@@ -44,6 +44,7 @@ function SendEmail() {
         name="url"
         value={`https://congchugraduate.netlify.app/userBlackboard/${data.url}`}
       />
+      <input type="text" name="email" value={email} />
       <Input
         title={"칠판을 받아보실 이메일"}
         maxcount={999999999}
