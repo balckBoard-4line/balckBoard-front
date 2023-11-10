@@ -32,9 +32,8 @@ function UserBlackBoard() {
     const deadline = moment(data.graduateDate);
     console.log(deadline);
     const currentTime = moment();
-    console.log("시간", deadline.diff(currentTime));
-    console.log("데드라인지남?", deadline < currentTime, deadline, currentTime);
-    setIsLaunch(deadline.diff(currentTime) < 0);
+
+    setIsLaunch(deadline < currentTime);
   }, [data]);
 
   useEffect(() => {
