@@ -9,6 +9,7 @@ import TitleEditor from "./pages/title/TitleEditor";
 import TitleCreate from "./pages/title/TitleCreate";
 import Visitors from "./pages/visitors/Visitors";
 import UserBlackBoard from "./pages/userBlackBoard/UserBlackBoard";
+import SendEmail from "./components/blackBoard/sendEmail";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
       { path: "/letterCreate/:url", element: <LetterCreate /> },
       { path: "/letterEditor/:url", element: <LetterEditor /> },
       { path: "/userBlackBoard/:url", element: <UserBlackBoard /> },
-      { path: "/visitors/:url", element: <Visitors /> }
+      { path: "/visitors/:url", element: <Visitors /> },
+      {
+        path: "/sendEmail",
+        element: <SendEmail />
+      }
     ],
     errorElement: <NotFound />
   }

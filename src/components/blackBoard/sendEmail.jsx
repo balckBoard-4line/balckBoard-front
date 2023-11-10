@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { useLocation } from "react-router-dom";
 
-function sendEmail() {
+function SendEmail() {
   const location = useLocation();
   const data = { ...location.state };
   const sendEmail = e => {
@@ -45,4 +45,4 @@ function sendEmail() {
   );
 }
 
-export default sendEmail;
+export default SendEmail;
