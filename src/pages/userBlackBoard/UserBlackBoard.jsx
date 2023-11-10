@@ -32,7 +32,11 @@ function UserBlackBoard() {
     const deadline = moment(data.graduateDate);
     console.log(deadline);
     const currentTime = moment();
-    console.log(moment(data.graduateDate).valueOf(), currentTime.valueOf());
+    console.log(
+      moment(data.graduateDate).valueOf(),
+      currentTime.valueOf(),
+      moment(data.graduateDate).valueOf() - currentTime.valueOf()
+    );
     setIsLaunch(
       moment(data.graduateDate).valueOf() - currentTime.valueOf() < 0
     );
