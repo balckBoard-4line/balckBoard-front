@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 function SendEmail() {
@@ -26,6 +26,7 @@ function SendEmail() {
       );
   };
   const form = useRef();
+
   useEffect(() => {
     form.submit();
     window.location.href = `/userBlackboard/${response.data.url}`;
