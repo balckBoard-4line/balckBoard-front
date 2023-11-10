@@ -54,7 +54,7 @@ function BeforeLaunch({ data, getIsLaunch }) {
         <S.LeftDateAbout>
           <S.LeftDateAbout>칠판 공개까지</S.LeftDateAbout>
           <S.LeftDateContent>
-            {timeLeft.day}일 {timeLeft.hour}시간 {timeLeft.minute}분 //{" "}
+            {timeLeft.day}일 {timeLeft.hour}시간 {timeLeft.minute}분{" "}
             {timeLeft.second}초
           </S.LeftDateContent>
         </S.LeftDateAbout>
@@ -66,11 +66,11 @@ function BeforeLaunch({ data, getIsLaunch }) {
       <S.FooterWrapper>
         <Link
           to={`/letterCreate/${params.url}`}
-          style={{ marginBottom: "15px" }}
+          style={{ marginBottom: "5px" }}
         >
           <Button content={"칠판 꾸며주기"} type={"white"} />
         </Link>
-        <Link to={`/visitors/${params.url}`} style={{ marginBottom: "15px" }}>
+        <Link to={`/visitors/${params.url}`} style={{ marginBottom: "5px" }}>
           <Button content={"다녀간 사람"} type={"black"} />
         </Link>
 

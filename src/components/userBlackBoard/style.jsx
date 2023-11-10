@@ -19,6 +19,8 @@ export const LeftDateWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 0 25px;
+  padding-top: 30px;
 `;
 
 export const LeftDateTitle = styled.div`
@@ -44,6 +46,7 @@ export const CopyBtn = styled.img`
 export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 export const WantToMakeBtn = styled.div`
   display: flex;
