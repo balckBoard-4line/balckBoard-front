@@ -4,9 +4,12 @@ import moment from "moment";
 import { useParams, Link } from "react-router-dom";
 import BlackBoard from "../blackBoard/BlackBoard";
 import Button from "../common/button/Button";
+import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 
 function BeforeLaunch({ data, getIsLaunch }) {
   const params = useParams();
+
+  const emSize = (useInnerWidth() / 375) * 10;
 
   const [timeLeft, setTimeLeft] = useState({
     day: 0,
@@ -61,7 +64,9 @@ function BeforeLaunch({ data, getIsLaunch }) {
         <S.CopyBtn src="/LinkIcon.png" onClick={handleCopyURL} />
       </S.LeftDateWrapper>
 
-      <BlackBoard data={data} type={"title"} />
+      <S.BlackBoardWrapper $emSize={emSize}>
+        <BlackBoard data={data} type={"title"} />
+      </S.BlackBoardWrapper>
 
       <S.FooterWrapper>
         <Link

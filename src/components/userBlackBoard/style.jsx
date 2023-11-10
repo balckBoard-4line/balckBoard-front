@@ -64,3 +64,8 @@ export const Wood = styled.div`
   height: 20px;
   background-color: #715948;
 `;
+
+export const BlackBoardWrapper = styled.div`
+  width: 100%;
+  font-size: ${props => props.$emSize};
+`;
