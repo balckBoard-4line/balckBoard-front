@@ -43,7 +43,7 @@ function Main() {
     fetchLanternsData();
   }, []);
 
-  const initialText = "지금까지" + data + "개의 칠판이 만들어졌어요!";
+  const initialText = "지금까지 " + data + "개의 칠판이 만들어졌어요!";
   const [displayedText, setDisplayedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
 
