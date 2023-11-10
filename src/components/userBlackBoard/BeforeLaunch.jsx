@@ -71,9 +71,9 @@ function BeforeLaunch({ data, getIsLaunch }) {
             </S.Bfnum1link>
           </S.Bfnum1>
           <S.Bfnum2>
-            <S.Bfnum2title>제목</S.Bfnum2title>
+            <S.Bfnum2title>{data.title}</S.Bfnum2title>
             <br />
-            <S.Bfnum2subtitle>부제</S.Bfnum2subtitle>
+            <S.Bfnum2subtitle>{data.introduction}</S.Bfnum2subtitle>
           </S.Bfnum2>
           <S.Bfnum3>
             <S.Bfnum3in1wrp>
