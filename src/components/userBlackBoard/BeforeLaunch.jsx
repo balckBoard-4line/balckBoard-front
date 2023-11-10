@@ -38,7 +38,7 @@ function BeforeLaunch({ data, getIsLaunch }) {
         setTimeLeft({ days, hours, minutes, seconds });
         setLoading(false); // 시간이 설정되면 로딩을 해제
       }
-      if (deadline.isBefore(currentTime)) {
+      if (deadline < currentTime) {
         getIsLaunch(true);
       }
     }, 1000);

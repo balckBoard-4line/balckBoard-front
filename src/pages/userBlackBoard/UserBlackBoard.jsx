@@ -33,7 +33,9 @@ function UserBlackBoard() {
     console.log(deadline);
     const currentTime = moment();
 
-    setIsLaunch(deadline.isBefore(currentTime));
+    setIsLaunch(
+      moment(data.graduateDate).valueOf() - currentTime.valueOf() < 0
+    );
   }, [data]);
 
   useEffect(() => {
