@@ -43,7 +43,7 @@ function SendEmail() {
         name="url"
         value={`https://congchugraduate.netlify.app/userBlackboard/${data.url}`}
       />
-      <button type="submit" value={"제출하기"} />
+      <button value={"제출하기"} />
     </form>
   );
 }
