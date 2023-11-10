@@ -6,7 +6,7 @@ import useInnerWidth from "../../hooks/usInnerWidth/useInnerWidth";
 import Header from "../layout/header/StickerEditorHeader";
 import BlackBoardStickerModal from "./BlackBoardStickerModal";
 import BlackBoard from "./BlackBoard";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { API } from "../../api/axios";
 
@@ -21,6 +21,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
       if (type == "title") {
         response = await API.post(`api/blackboard`, {
           title: data.title,
+          email: data.email,
           introduction: data.introduction,
           graduateDate: data.graduateDate,
           stickers: stickers
@@ -41,7 +42,15 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
 
       if (response.status === 201) {
         if (type == "title") {
-          window.location.href = `/userBlackboard/${response.data.url}`;
+          const navigate = useNavigate();
+          navigate("/sendEmail", {
+            state: {
+              title: data.title,
+              graduateDate: data.graduateDate,
+              email: data.email,
+              response: response
+            }
+          });
         } else {
           window.location.href = `/userBlackboard/${params.url}`;
         }
