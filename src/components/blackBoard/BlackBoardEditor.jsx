@@ -48,7 +48,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
               title: data.title,
               graduateDate: data.graduateDate,
               email: data.email,
-              response: response
+              url: response.data.url
             }
           });
         } else {
