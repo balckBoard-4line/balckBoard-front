@@ -141,8 +141,12 @@ function Main() {
         </S.FooterContent>
 
         <S.FooterIconList>
-          <S.FooterIcon src="/Icon_Insta.svg" />
-          <S.FooterIcon src="/Icon_GIt.svg" />
+          <Link to={"https://www.instagram.com/congchu.graduate/"}>
+            <S.FooterIcon src="/Icon_Insta.svg" />
+          </Link>
+          <Link to={"https://github.com/balckBoard-4line"}>
+            <S.FooterIcon src="/Icon_GIt.svg" />
+          </Link>
         </S.FooterIconList>
       </S.FooterWrapper>
     </S.MainWrapper>
