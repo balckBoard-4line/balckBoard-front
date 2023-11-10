@@ -16,11 +16,6 @@ function TitleCreate() {
     setIntroduction(introduction);
   };
 
-  const [email, setEmail] = useState("");
-  const getEmail = email => {
-    setEmail(email);
-  };
-
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
@@ -112,7 +107,7 @@ function TitleCreate() {
         </S.BlackBoardInput>
       </S.PageContent>
 
-      {title.length * introduction.length * email.length != 0 ? (
+      {title.length * introduction.length != 0 ? (
         <Button
           content={"이렇게 할게요"}
           type={"white"}
