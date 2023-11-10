@@ -9,7 +9,7 @@ import TitleEditor from "./pages/title/TitleEditor";
 import TitleCreate from "./pages/title/TitleCreate";
 import Visitors from "./pages/visitors/Visitors";
 import UserBlackBoard from "./pages/userBlackBoard/UserBlackBoard";
-import SendEmail from "./components/blackBoard/sendEmail";
+import SendEmail from "./pages/title/SendEmail";
 
 const router = createBrowserRouter([
   {

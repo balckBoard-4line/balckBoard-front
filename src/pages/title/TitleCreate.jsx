@@ -69,7 +69,6 @@ function TitleCreate() {
       state: {
         title: title,
         introduction: introduction,
-        email: email,
         graduateDate: `${selectedDate} ${selectedTime + ":00"}`
       }
     });
@@ -94,15 +93,6 @@ function TitleCreate() {
           font="Pretendard"
           placeholder={"칠판의 소개를 입력해주세요."}
           getValue={getIntroduction}
-        />
-
-        <Input
-          title={"칠판을 받아보실 이메일"}
-          maxcount={999999999}
-          font="Pretendard"
-          placeholder={"example@example.com"}
-          getValue={getEmail}
-          showInputCount={false}
         />
 
         <S.BlackBoardInput>

@@ -22,7 +22,6 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
       if (type == "title") {
         response = await API.post(`api/blackboard`, {
           title: data.title,
-          email: data.email,
           introduction: data.introduction,
           graduateDate: data.graduateDate,
           stickers: stickers
@@ -47,7 +46,6 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
             state: {
               title: data.title,
               graduateDate: data.graduateDate,
-              email: data.email,
               url: response.data.url
             }
           });

@@ -1,6 +1,8 @@
 import emailjs from "@emailjs/browser";
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import Input from "../../components/common/input/Input";
+import Button from "../../components/common/button/Button";
 
 function SendEmail() {
   const location = useLocation();
@@ -25,21 +27,28 @@ function SendEmail() {
           alert("이메일이 전송이 실패되었습니다.");
         }
       );
-    window.location.href = `/userBlackboard/${params.url}`;
+    window.location.href = `/userBlackboard/${url}`;
   };
   const form = useRef();
 
   return (
     <form ref={form} onSubmit={sendEmail}>
       <input type="text" name="title" value={data.title} />
-      <input type="text" name="email" value={data.email} />
       <input type="text" name="graduateDate" value={data.graduateDate} />
       <input
         type="text"
         name="url"
         value={`https://congchugraduate.netlify.app/userBlackboard/${data.url}`}
       />
-      <button>제출</button>
+      <Input
+        title={"칠판을 받아보실 이메일"}
+        maxcount={999999999}
+        font="Pretendard"
+        placeholder={"example@example.com"}
+        getValue={getEmail}
+        showInputCount={false}
+      />
+      <Button type={"submit"} buttonHandeler={onSubmit()} />
     </form>
   );
 }
