@@ -2,7 +2,8 @@ import emailjs from "@emailjs/browser";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Input from "../../components/common/input/Input";
-import Button from "../../components/common/button/Button";
+
+import * as S from "./style";
 
 function SendEmail() {
   const location = useLocation();
@@ -36,25 +37,35 @@ function SendEmail() {
     setEamil(email);
   };
   return (
-    <form ref={form} onSubmit={sendEmail}>
-      <input type="text" name="title" value={data.title} />
-      <input type="text" name="graduateDate" value={data.graduateDate} />
-      <input
-        type="text"
-        name="url"
-        value={`https://congchugraduate.netlify.app/userBlackboard/${data.url}`}
-      />
-      <input type="text" name="email" value={email} />
+    <S.SendEmailPageWrapper ref={form} onSubmit={sendEmail}>
+      <S.HideInput>
+        <input type="text" name="title" value={data.title} />
+        <input type="text" name="graduateDate" value={data.graduateDate} />
+        <input
+          type="text"
+          name="url"
+          value={`https://congchugraduate.netlify.app/userBlackboard/${data.url}`}
+        />
+        <input type="text" name="email" value={email} />
+      </S.HideInput>
+
+      <S.SendEmailTitle>칠판 생성에 성공하셨습니다!</S.SendEmailTitle>
+      <S.SendEmailTitle>
+        칠판 주소를 받아보실 이메일을 적어주세요!
+      </S.SendEmailTitle>
+
       <Input
-        title={"칠판을 받아보실 이메일"}
+        title={""}
         maxcount={999999999}
         font="Pretendard"
         placeholder={"example@example.com"}
         getValue={getEmail}
         showInputCount={false}
       />
-      <button>제출하기</button>
-    </form>
+      <S.SendEmailButtonWrapper>
+        <S.SendEmailButtonArea>여기로 주소를 받을래요!</S.SendEmailButtonArea>
+      </S.SendEmailButtonWrapper>
+    </S.SendEmailPageWrapper>
   );
 }
 

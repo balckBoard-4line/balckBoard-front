@@ -118,3 +118,57 @@ export const InputCount = styled.div`
   font-family: "Pretendard";
   color: ${props => props.theme.colors.font1};
 `;
+
+export const SendEmailButtonWrapper = styled.div`
+  width: 100%;
+  padding: 0px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
+export const SendEmailButtonArea = styled.button`
+  width: 100%;
+  padding: 15px 0px;
+  border-radius: 10px;
+  font-size: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  color: ${props => props.theme.colors.main1};
+  background-color: white;
+  border: 2px solid;
+  border-color: white;
+
+  font-family: "Alien";
+`;
+
+export const SendEmailPageWrapper = styled.form`
+  width: 100%;
+  max-width: 420px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
+`;
+
+export const SendEmailTitle = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
+`;
+
+export const HideInput = styled.div`
+  position: fixed;
+  top: 6000000px;
+`;
