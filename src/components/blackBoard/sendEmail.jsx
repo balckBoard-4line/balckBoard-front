@@ -25,6 +25,7 @@ function SendEmail() {
           alert("이메일이 전송이 실패되었습니다.");
         }
       );
+    window.location.href = `/userBlackboard/${params.url}`;
   };
   const form = useRef();
 
@@ -38,6 +39,7 @@ function SendEmail() {
         name="url"
         value={`https://congchugraduate.netlify.app/userBlackboard/${data.url}`}
       />
+      <button>제출</button>
     </form>
   );
 }
