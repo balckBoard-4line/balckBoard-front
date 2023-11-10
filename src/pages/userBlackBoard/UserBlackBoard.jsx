@@ -34,7 +34,7 @@ function UserBlackBoard() {
     const currentTime = moment();
     console.log(moment(data.graduateDate).valueOf(), currentTime.valueOf());
     setIsLaunch(
-      moment(data.graduateDate).valueOf() - currentTime.valueOf() > 0
+      moment(data.graduateDate).valueOf() - currentTime.valueOf() < 0
     );
   }, [data]);
 
