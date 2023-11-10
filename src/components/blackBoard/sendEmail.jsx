@@ -41,7 +41,7 @@ function SendEmail() {
       <input
         type="text"
         name="url"
-        value={`https://congchugraduate.netlify.app/userBlackboard/${data.response.data.url}`}
+        value={`https://congchugraduate.netlify.app/userBlackboard/${data.url}`}
       />
       <button type="submit" value={"문의하기"} />
     </form>
