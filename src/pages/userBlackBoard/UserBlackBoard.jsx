@@ -37,9 +37,9 @@ function UserBlackBoard() {
       currentTime.valueOf(),
       moment(data.graduateDate).valueOf() - currentTime.valueOf()
     );
-    setIsLaunch(
-      moment(data.graduateDate).valueOf() - currentTime.valueOf() < 0
-    );
+    if (moment(data.graduateDate).valueOf() - currentTime.valueOf() < 0) {
+      setIsLaunch(true);
+    }
   }, [data]);
 
   useEffect(() => {
