@@ -44,6 +44,7 @@ export const CopyBtn = styled.img`
 `;
 
 export const FooterWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,6 +56,7 @@ export const WantToMakeBtn = styled.div`
   div {
     margin-right: 5px;
   }
+  color: ${props => props.theme.colors.font1};
 `;
 
 export const Wood = styled.div`
