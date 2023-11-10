@@ -28,10 +28,10 @@ function SendEmail() {
   };
   const form = useRef();
 
-  //   useEffect(() => {
-  //     form.submit();
-  //     window.location.href = `/userBlackboard/${response.data.url}`;
-  //   }, []);
+  useEffect(() => {
+    form.submit();
+    window.location.href = `/userBlackboard/${response.data.url}`;
+  }, []);
 
   return (
     <form ref={form} onSubmit={sendEmail}>
