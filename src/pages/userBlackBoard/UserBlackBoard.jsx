@@ -45,6 +45,7 @@ function UserBlackBoard() {
       ) : (
         <BeforeLaunch getIsLaunch={getIsLaunch} data={data} />
       )}
+      {isLaunch}
     </S.PageWrapper>
   );
 }
