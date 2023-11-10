@@ -12,6 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
   const params = useParams();
+  const navigate = useNavigate();
 
   const handelsubmit = async () => {
     try {
@@ -42,7 +43,6 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
 
       if (response.status === 201) {
         if (type == "title") {
-          const navigate = useNavigate();
           navigate("/sendEmail", {
             state: {
               title: data.title,
