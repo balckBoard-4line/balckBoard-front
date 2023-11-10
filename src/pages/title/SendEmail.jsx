@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Input from "../../components/common/input/Input";
 import Button from "../../components/common/button/Button";
@@ -31,6 +31,10 @@ function SendEmail() {
   };
   const form = useRef();
 
+  const [email, setEamil] = useState("");
+  const getEmail = email => {
+    setEamil(email);
+  };
   return (
     <form ref={form} onSubmit={sendEmail}>
       <input type="text" name="title" value={data.title} />
