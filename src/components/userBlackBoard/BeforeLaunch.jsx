@@ -66,11 +66,14 @@ function BeforeLaunch({ data, getIsLaunch }) {
       <S.FooterWrapper>
         <Link
           to={`/letterCreate/${params.url}`}
-          style={{ marginBottom: "5px" }}
+          style={{ marginBottom: "5px", width: "100%" }}
         >
           <Button content={"칠판 꾸며주기"} type={"white"} />
         </Link>
-        <Link to={`/visitors/${params.url}`} style={{ marginBottom: "5px" }}>
+        <Link
+          to={`/visitors/${params.url}`}
+          style={{ marginBottom: "5px", width: "100%" }}
+        >
           <Button content={"다녀간 사람"} type={"black"} />
         </Link>
 
