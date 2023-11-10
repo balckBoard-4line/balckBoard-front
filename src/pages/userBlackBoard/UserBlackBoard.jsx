@@ -27,6 +27,7 @@ function UserBlackBoard() {
 
   //졸업날짜가 지났는지 확인하는 함수
   const [isLaunch, setIsLaunch] = useState(false);
+
   useEffect(() => {
     const deadline = moment(data.graduateDate);
     console.log(deadline);
@@ -40,7 +41,7 @@ function UserBlackBoard() {
 
   return (
     <S.PageWrapper style={{ position: isLaunch ? "" : "fixed" }}>
-      {isLaunch ? (
+      {moment(data.graduateDate) < moment() ? (
         <AfterLaunch data={data} />
       ) : (
         <BeforeLaunch getIsLaunch={getIsLaunch} data={data} />
