@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import * as S from "./style";
 
 function BeforeLaunch({ data, getIsLaunch }) {
+  const params = useParams();
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -99,7 +101,7 @@ function BeforeLaunch({ data, getIsLaunch }) {
             <S.Bfnum3>
               <S.Bfnum3in1wrp>
                 <Link
-                  to="/letterCreate/1"
+                  to={`/letterCreate/${params.url}`}
                   style={{ width: "100%", height: "100%" }}
                 >
                   <S.Bfnum3in1>칠판 편지남기기</S.Bfnum3in1>
