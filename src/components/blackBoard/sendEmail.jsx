@@ -45,7 +45,7 @@ function SendEmail() {
       />
       <div
         onClick={() => {
-          form.submit;
+          form.submit();
         }}
       >
         클릭
