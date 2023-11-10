@@ -29,7 +29,7 @@ function SendEmail() {
   const form = useRef();
 
   useEffect(() => {
-    form.submit();
+    document.form.submit();
     window.location.href = `/userBlackboard/${response.data.url}`;
   }, []);
 
