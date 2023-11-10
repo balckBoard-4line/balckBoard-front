@@ -85,7 +85,10 @@ function BeforeLaunch({ data, getIsLaunch }) {
               </Link>
             </S.Bfnum3in1wrp>
             <S.Bfnum3in2wrp>
-              <Link to="/visitors/1" style={{ width: "100%", height: "100%" }}>
+              <Link
+                to={`/visitors/${params.url}`}
+                style={{ width: "100%", height: "100%" }}
+              >
                 <S.Bfnum3in2>다녀간 사람</S.Bfnum3in2>
               </Link>
             </S.Bfnum3in2wrp>
