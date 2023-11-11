@@ -5,7 +5,9 @@ import BlackBoardList from "../blackBoard/BlackBoardList";
 function AfterLaunch({ data }) {
   return (
     <>
-      <BlackBoardList data={data} />
+      <S.ListWrapper>
+        <BlackBoardList data={data} />
+      </S.ListWrapper>
     </>
   );
 }

@@ -78,3 +78,8 @@ export const Loading = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const ListWrapper = styled.div`
+  height: 100%;
+  overflow: 1;
+`;

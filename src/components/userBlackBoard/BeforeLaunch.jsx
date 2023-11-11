@@ -90,7 +90,7 @@ function BeforeLaunch({ data, getIsLaunch }) {
               <Button content={"다녀간 사람"} type={"black"} />
             </Link>
 
-            <Link>
+            <Link to={`/titleCreate`}>
               <S.WantToMakeBtn>
                 <div>나도 칠판 만들기</div>
                 <span> {">"}</span>
