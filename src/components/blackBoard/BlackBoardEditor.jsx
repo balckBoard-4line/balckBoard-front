@@ -15,6 +15,8 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
   const navigate = useNavigate();
 
   const handelsubmit = async () => {
+    console.log("handelsubmit 함수 호출됨"); // 확인을 위한 로그
+
     try {
       //--------API쏘기
       let response;
@@ -50,6 +52,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
         } else {
           window.location.href = `/userBlackboard/${params.url}`;
         }
+        alert("칠판 편지 작성이 완료되었습니다!"); // 확인을 위한 alert
       }
     } catch (error) {
       getDoSubmit(false);

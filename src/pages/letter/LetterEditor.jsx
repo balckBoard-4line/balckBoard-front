@@ -11,12 +11,11 @@ function LetterEditor() {
   const data = { ...location.state };
 
   const [doSubmit, setDoSubmit] = useState(false);
-  const getDoSubmit = bool => {
-    setDoSubmit(bool);
-  };
 
   const handlePost = () => {
     setDoSubmit(true);
+    // 버튼을 눌렀을 때 alert 메시지 창 띄우기
+    alert("칠판 편지 작성이 완료되었습니다!");
   };
 
   return (
@@ -24,16 +23,12 @@ function LetterEditor() {
       <S.PageContent>
         <BlackBoardEditor
           doSubmit={doSubmit}
-          getDoSubmit={getDoSubmit}
+          getDoSubmit={bool => setDoSubmit(bool)}
           type={"letter"}
           data={data}
         />
       </S.PageContent>
-      <Button
-        content={"이렇게 할래요"}
-        type={"white"}
-        buttonHandeler={handlePost}
-      />
+      <Button content={"이렇게 할래요"} type={"white"} onClick={handlePost} />
     </S.PageWrapper>
   );
 }
