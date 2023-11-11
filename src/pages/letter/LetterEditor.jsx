@@ -31,7 +31,11 @@ function LetterEditor() {
           data={data}
         />
       </S.PageContent>
-      <Button content={"이렇게 할래요"} type={"white"} onClick={handlePost} />
+      <Button
+        content={"이렇게 할래요"}
+        type={"white"}
+        buttonHandeler={handlePost}
+      />
     </S.PageWrapper>
   );
 }
