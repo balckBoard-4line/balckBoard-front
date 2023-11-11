@@ -26,17 +26,12 @@ function LetterEditor() {
       <S.PageContent>
         <BlackBoardEditor
           doSubmit={doSubmit}
-          getDoSubmit={bool => setDoSubmit(bool)}
+          getDoSubmit={getDoSubmit}
           type={"letter"}
           data={data}
         />
       </S.PageContent>
-      <Button
-        content={"이렇게 할래요"}
-        getDoSubmit={getDoSubmit}
-        type={"white"}
-        onClick={handlePost}
-      />
+      <Button content={"이렇게 할래요"} type={"white"} onClick={handlePost} />
     </S.PageWrapper>
   );
 }
