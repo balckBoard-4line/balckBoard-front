@@ -12,6 +12,10 @@ function LetterEditor() {
 
   const [doSubmit, setDoSubmit] = useState(false);
 
+  const getDoSubmit = bool => {
+    setDoSubmit(bool);
+  };
+
   const handlePost = () => {
     console.log("클릭");
     setDoSubmit(true);
@@ -27,7 +31,12 @@ function LetterEditor() {
           data={data}
         />
       </S.PageContent>
-      <Button content={"이렇게 할래요"} type={"white"} onClick={handlePost} />
+      <Button
+        content={"이렇게 할래요"}
+        getDoSubmit={getDoSubmit}
+        type={"white"}
+        onClick={handlePost}
+      />
     </S.PageWrapper>
   );
 }
