@@ -81,5 +81,5 @@ export const Loading = styled.div`
 
 export const ListWrapper = styled.div`
   height: 100%;
-  overflow: 1;
+  overflow-y: scroll;
 `;
