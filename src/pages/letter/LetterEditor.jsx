@@ -14,8 +14,6 @@ function LetterEditor() {
 
   const handlePost = () => {
     setDoSubmit(true);
-    // 버튼을 눌렀을 때 alert 메시지 창 띄우기
-    alert("칠판 편지 작성이 완료되었습니다!");
   };
 
   return (

@@ -51,8 +51,8 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
           });
         } else {
           window.location.href = `/userBlackboard/${params.url}`;
+          alert("칠판 편지 작성이 완료되었습니다!");
         }
-        alert("칠판 편지 작성이 완료되었습니다!"); // 확인을 위한 alert
       }
     } catch (error) {
       console.log("에러~", error);
