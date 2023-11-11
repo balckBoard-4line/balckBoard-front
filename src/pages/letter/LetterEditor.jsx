@@ -17,10 +17,8 @@ function LetterEditor() {
   };
 
   const handlePost = () => {
-    console.log("클릭");
     setDoSubmit(true);
   };
-
   return (
     <S.PageWrapper style={{ backgroundColor: "#486455" }}>
       <S.PageContent>
@@ -31,6 +29,7 @@ function LetterEditor() {
           data={data}
         />
       </S.PageContent>
+
       <Button
         content={"이렇게 할래요"}
         type={"white"}

@@ -48,8 +48,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
             }
           });
         } else {
-          alert("칠판 편지 작성을 성공하셨습니다!");
-          window.location.href = `/userBlackboard/${params.url}`;
+          window.location.href = `/visitors/${params.url}`;
         }
       }
     } catch (error) {
