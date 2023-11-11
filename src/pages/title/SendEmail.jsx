@@ -14,7 +14,7 @@ function SendEmail() {
 
     emailjs
       .sendForm(
-        "service_jq3trkm",
+        "service_wvnvdjf",
         "template_pmpc56j",
         form.current,
         "nXJOAXErytPFc_Sug"
