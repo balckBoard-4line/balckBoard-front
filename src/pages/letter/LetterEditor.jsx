@@ -13,6 +13,7 @@ function LetterEditor() {
   const [doSubmit, setDoSubmit] = useState(false);
 
   const handlePost = () => {
+    console.log("클릭");
     setDoSubmit(true);
   };
 

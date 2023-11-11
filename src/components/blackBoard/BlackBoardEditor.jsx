@@ -15,8 +15,6 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
   const navigate = useNavigate();
 
   const handelsubmit = async () => {
-    console.log("handelsubmit 함수 호출됨"); // 확인을 위한 로그
-
     try {
       //--------API쏘기
       let response;
@@ -50,10 +48,12 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
             }
           });
         } else {
+          alert("칠판 편지 작성을 성공하셨습니다!");
           window.location.href = `/userBlackboard/${params.url}`;
         }
       }
     } catch (error) {
+      alert("칠판 편지 쓰기에 실패했습니다.");
       console.log("에러~", error);
       getDoSubmit(false);
     }
