@@ -72,7 +72,7 @@ function BeforeLaunch({ data, getIsLaunch }) {
             <S.CopyBtn src="/LinkIcon.png" onClick={handleCopyURL} />
           </S.LeftDateWrapper>
 
-          <S.BlackBoardWrapper $emSize={emSize}>
+          <S.BlackBoardWrapper $emSize={emSize + "px"}>
             <BlackBoard data={data} type={"title"} />
           </S.BlackBoardWrapper>
 

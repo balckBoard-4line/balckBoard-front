@@ -37,7 +37,7 @@ function App() {
   const emSize = (useInnerWidth() / 375) * 10;
   return (
     <>
-      <ThemeProvider emSize={emSize + "px"} theme={theme}>
+      <ThemeProvider $emSize={emSize + "px"} theme={theme}>
         <GlobalStyle />
         <Layout />
       </ThemeProvider>
