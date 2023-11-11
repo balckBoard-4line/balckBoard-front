@@ -52,6 +52,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
         }
       }
     } catch (error) {
+      console.log("에러~", error);
       getDoSubmit(false);
     }
   };
