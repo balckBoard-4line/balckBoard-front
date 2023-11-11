@@ -9,7 +9,7 @@ function BlackBoardList({ data }) {
   const emSize = (useInnerWidth() / 375) * 10;
 
   return (
-    <S.BlackBoardListWrapper $emsize={emSize + "px"}>
+    <S.BlackBoardListWrapper $emSize={emSize + "px"}>
       <BlackBoard data={data} type={"title"} />
       {data?.letters?.map(letter => (
         <BlackBoard key={letter.blackboardId} data={letter} type={"letter"} />

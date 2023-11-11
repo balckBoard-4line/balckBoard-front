@@ -55,6 +55,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
         alert("칠판 편지 작성이 완료되었습니다!"); // 확인을 위한 alert
       }
     } catch (error) {
+      console.log("에러~", error);
       getDoSubmit(false);
     }
   };
@@ -152,7 +153,7 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
   }, [position]);
 
   return (
-    <S.BlackBoardEditorWrapper $emsize={emSize + "px"}>
+    <S.BlackBoardEditorWrapper $emSize={emSize + "px"}>
       <Header type={type} getShowStickerModal={getShowStickerModal} />
 
       <S.BlackBoardEditorContent>

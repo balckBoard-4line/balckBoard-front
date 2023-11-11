@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LetterTextEditorWrapper = styled.div`
-  font-size: ${props => props.$emsize};
+  font-size: ${props => props.$emSize};
   font-family: ${props => props.$font};
 
   height: 25em;

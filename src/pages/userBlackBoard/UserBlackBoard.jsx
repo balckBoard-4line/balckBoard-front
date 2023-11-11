@@ -29,10 +29,6 @@ function UserBlackBoard() {
   const [isLaunch, setIsLaunch] = useState(false);
 
   useEffect(() => {
-    const deadline = moment(data.graduateDate);
-
-    const currentTime = moment();
-
     setIsLaunch(moment(data.graduateDate).valueOf() - moment().valueOf() < 0);
   }, [data]);
 

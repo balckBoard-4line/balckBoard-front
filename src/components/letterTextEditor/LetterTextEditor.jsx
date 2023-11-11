@@ -144,7 +144,7 @@ function LetterTextEditor({ nickname, getNickname, doSubmit }) {
       {/* ----텍스트 에디터 */}
 
       {/* 텍스트 에디터 */}
-      <S.LetterTextEditorWrapper $font={currentFont} $emsize={emSize + "px"}>
+      <S.LetterTextEditorWrapper $font={currentFont} $emSize={emSize + "px"}>
         <S.LetterTextEditorInputWrapper>
           <S.LetterTextEditorInput
             style={{ textAlign: `${currentAlign}` }}
