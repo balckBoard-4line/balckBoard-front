@@ -38,8 +38,6 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
         });
       }
 
-      console.log(response);
-
       if (response.status === 201) {
         if (type == "title") {
           navigate("/sendEmail", {
@@ -54,7 +52,6 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
         }
       }
     } catch (error) {
-      console.log("에러~", error);
       getDoSubmit(false);
     }
   };

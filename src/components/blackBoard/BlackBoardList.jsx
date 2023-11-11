@@ -7,7 +7,6 @@ import moment from "moment";
 
 function BlackBoardList({ data }) {
   const emSize = (useInnerWidth() / 375) * 10;
-  console.log(moment(data.graduateDate));
 
   return (
     <S.BlackBoardListWrapper $emsize={emSize + "px"}>

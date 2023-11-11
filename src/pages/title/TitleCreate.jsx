@@ -49,12 +49,10 @@ function TitleCreate() {
 
   const handleDateChange = date => {
     setSelectedDate(date); // 날짜 업데이트
-    console.log("Selected Date after update:", date);
   };
 
   const handleTimeChange = time => {
     setSelectedTime(time); // 시간 업데이트
-    console.log("Selected Time after update:", time);
   };
 
   const navigate = useNavigate();

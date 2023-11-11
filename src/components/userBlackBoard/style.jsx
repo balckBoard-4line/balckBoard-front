@@ -30,6 +30,8 @@ export const LeftDateTitle = styled.div`
 
 export const LeftDateAbout = styled.div`
   font-size: 14px;
+
+  margin-bottom: 5px;
 `;
 
 export const LeftDateContent = styled.div`

@@ -15,7 +15,7 @@ function UserBlackBoard() {
   const fetchLanternsData = async () => {
     try {
       const response = await API.get(`api/blackboard/?id=${params.url}`);
-      console.log(response.data);
+
       setData(response.data);
     } catch (error) {
       console.log("에러~", error);
@@ -30,20 +30,11 @@ function UserBlackBoard() {
 
   useEffect(() => {
     const deadline = moment(data.graduateDate);
-    console.log(deadline);
+
     const currentTime = moment();
-    console.log(
-      moment(data.graduateDate).valueOf(),
-      currentTime.valueOf(),
-      moment(data.graduateDate).valueOf() - moment().valueOf(),
-      moment(data.graduateDate).valueOf() - moment().valueOf() < 0
-    );
+
     setIsLaunch(moment(data.graduateDate).valueOf() - moment().valueOf() < 0);
   }, [data]);
-
-  useEffect(() => {
-    console.log(isLaunch);
-  }, [isLaunch]);
 
   const getIsLaunch = bool => {
     setIsLaunch(bool);
