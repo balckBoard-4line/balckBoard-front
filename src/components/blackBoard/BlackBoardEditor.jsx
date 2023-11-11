@@ -50,8 +50,8 @@ function BlackBoardEditor({ doSubmit, getDoSubmit, type, data }) {
             }
           });
         } else {
-          window.location.href = `/userBlackboard/${params.url}`;
           alert("칠판 편지 작성이 완료되었습니다!");
+          window.location.href = `/userBlackboard/${params.url}`;
         }
       }
     } catch (error) {
